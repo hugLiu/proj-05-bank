@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jurassic.WebUpload</name>
+    </assembly>
+    <members>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.GetThumbnail(System.Int32)">
+            <summary>
+            获得缩略图
+            </summary>
+            <param name="id">文件信息id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.GetImg(System.Int32)">
+            <summary>
+            获得原图
+            </summary>
+            <param name="id">文件信息id</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.Download(System.Int32)">
+            <summary>
+            下载文件，根据Base_CatalogArticle中的ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.DownloadA(System.Int32)">
+            <summary>
+            下载文件，根据Base_Article中的ID
+            </summary>
+            <param name="id">Base_Article中的ID</param>
+            <returns>文件流</returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.GetFiles(System.Int32,System.Int32,System.Int32,System.String)">
+            <summary>
+            获取指定栏目下文件列表且分页显示
+            </summary>
+            <param name="catId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.CreateCatalog(System.String,System.Int32)">
+            <summary>
+            增加目录 
+            修改：[2017-01-17/汪敏]
+            </summary>
+            <param name="pId">新增的目录的父Id</param>
+            <param name="catalogName">新增目录的名称</param>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.DeleteCatalog(System.Int32)">
+            <summary>
+            删除目录 
+            修改：[2017-01-16/汪敏]
+            </summary>
+            <param name="catalogId">目录ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.RenameCatalog(System.String)">
+            <summary>
+            编辑目录
+            </summary>
+            <param name="catalogId"></param>
+            <param name="catalogName"></param>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.MoveToCatalog(System.String,System.Int32,System.Boolean)">
+            <summary>
+            修改文件所在目录，根据CatalogArticle中的Id，文件原来的目录Id,以及新的目录Id来操作
+            </summary>
+            <param name="model">一个文件信息对象</param>
+            <param name="catalogName">文件原来的目录Id</param>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.Edit(System.Int32)">
+            <summary>
+            编辑页面
+            </summary>
+            <param name="caId">栏目文章ID</param>
+            <returns>用户编辑页面</returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.Edit(Jurassic.CommonModels.Articles.Base_Article,System.Int32)">
+            <summary>
+            提交编辑
+            </summary>
+            <param name="art"></param>
+            <param name="caId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.Avatar">
+            <summary>
+            获得所有的系统头像信息，主要获取系统头像ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.GetUserAvatar(System.String)">
+            <summary>
+            根据userId获得用户选定的系统头像
+            </summary>
+            <param name="userName">用户名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.GetSystemAvatar(System.Int32)">
+            <summary>
+            根据系统头像的Id获得系统头像
+            </summary>
+            <param name="id">文件信息ID（Base_Article中的ID）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.SaveSysAvatar(System.Int32)">
+            <summary>
+            保存系统头像
+            </summary>
+            <param name="id">头像文件的Id</param>
+        </member>
+        <member name="M:Jurassic.WebUpload.Controllers.FilesController.GetAvatarCatalog">
+            <summary>
+            获得头像目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.WebUpload.UploadFormData">
+            <summary>
+            数据组件的表单数据对象
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.FormId">
+            <summary>
+            上传控件的HTML元素id,如果不指定，则由系统随机生成一个
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.CatalogId">
+            <summary>
+            上传到的目录ID，默认为0，则传到当前用户的根目录
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.FormDataName">
+            <summary>
+            表单数据元素名称，在上传成功后，将该元素内值填写为所有上传资源的逗号分隔的ID
+            如果页面表单没有这个名称的元素，则自动加上
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.ActionName">
+            <summary>
+            上传完毕后服务端要执行的方法名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.ControllerName">
+            <summary>
+            上传完毕后服务端要执行的方法所在控制器名称,不带'Controller'后缀
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.JsDoneFunction">
+            <summary>
+            服务端处理完后回调的js函数名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.JsAddFunction">
+            <summary>
+            文件添加到上传列表后没上传前的js函数名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.JsPreviewFunction">
+            <summary>
+            文件添加到上传列表后没上传前的js函数名称,作用为预览图片
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.MaxFileCount">
+            <summary>
+            限制同时上传数，为0表示不限制
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.AllowedTypes">
+            <summary>
+            允许上传的文件扩展名称，每一项用.扩展名表示。如".jpg"
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.MaxFileSize">
+            <summary>
+            限制最大文件大小，为0表示不限制
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.AutoUpload">
+            <summary>
+            是否选择文件后自动上传，默认值是True
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebUpload.UploadFormData.ShowManager">
+            <summary>
+            是否显示文件管理按钮
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebUpload.UploadResult">
+            <summary>
+            上传结果返回给前端的Model
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebUpload.ChunkInfo">
+            <summary>
+            分块上传时记录的块信息
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebUpload.WebUploadExtensions">
+            <summary>
+            对上传组件进行的HTML帮助类扩展
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebUpload.WebUploadExtensions.Upload(System.Web.Mvc.HtmlHelper,System.String,System.String,System.String,System.String)">
+            <summary>
+            加载上传组件代码
+            </summary>
+            <param name="htmlHelper">HTML帮助对象</param>
+            <param name="formDataName">UploadScriptsLoaded</param>
+            <param name="actionName">上传完毕后服务端要执行的方法名称</param>
+            <param name="controllerName">上传完毕后服务端要执行的方法所在控制器名称</param>
+            <param name="jsDoneFunction">服务端处理完后回调的js函数名称</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

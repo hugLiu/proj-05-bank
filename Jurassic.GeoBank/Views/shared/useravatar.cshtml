@@ -1,0 +1,60 @@
+﻿@*首页上的用户头像的显示，为了满足头像自定义的更改需要，将这部分写在分部视图中*@
+@{
+    var user = AppManager.Instance.UserManager.GetByName(User.Identity.Name);
+}
+<style>
+     .icon-new-userinfo
+     {
+        height:24px;
+        background:url(@Url.Action("GetUserAvatar", "Files", new { username = User.Identity.Name })) no-repeat
+     }
+    .mini-menuitem-icon {
+        font-family: "iconfont" !important;
+        font-size: 14px;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+     .mini-menuitem-icon, .mini-menuitem-allo {
+        height: 20px;
+        top:0;
+    }
+    a{
+     display:block;
+    }
+    .mini-menuitem-inner {
+        padding-right: 10px;
+        padding-left: 25px;
+    }
+     .mini-button .mini-button-text{
+        /*padding-left:35px;
+        line-height:20px;
+        padding-right:3px;*/
+    }
+    .userimg .mini-button-text{
+        padding:0;
+    }
+    img {
+        width:24px !important;
+        height:24px;
+        margin-right:3px;
+    }
+    img.mini-button-icon{
+        background-position:50%  50% !important;
+    }
+    .img-thumbnail{
+        padding:0;
+    }
+</style>
+<a class="mini-menubutton userimg" menu="#popupMenu" plain="true">
+    <span class="mini-button-text mini-button-icon-text">
+        <img class="mini-button-icon mini-iconfont icon-new-userinfo img-circle" style="background-color:#cfe2f8;" />
+        <span> @(user.TrueName.IsEmpty() ? User.Identity.Name : user.TrueName)</span>
+    </span>
+</a>
+<ul id="popupMenu" class="mini-menu shortcut_menu_popup" style="display:none; font-family:iconfont">
+    <li iconCls="icon-shezhi"><a href="~/home/selfserviceindex" target="main">@FStr.Settings</a></li>
+    <li iconCls="icon-yaochi1"><a href="~/account/changepassword" target="main">@FStr.ChangePassword</a></li>
+    <li class="separator"></li>
+    <li iconCls="icon-tuichu"><a href="~/Account/Logout">@FStr.Logout</a></li>
+</ul>

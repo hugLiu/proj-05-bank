@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+    var hello = "早上好";
+    if (DateTime.Now.Hour > 19)
+    {
+        hello = "晚上好";
+    }
+    else if (DateTime.Now.Hour > 13)
+    {
+        hello = "下午好";
+    }
+    else if (DateTime.Now.Hour > 11)
+    {
+        hello = "中午好";
+    }
+    var baseController = ViewContext.Controller as BaseController;
+    var user = baseController.CurrentUser.TrueName.IsEmpty() ? baseController.CurrentUser.Name : baseController.CurrentUser.TrueName;
+}
+
+<div style="padding:4px;">
+    @hello! @user. 欢迎使用@(JStr.SystemShortName). 当前时间是@(DateTime.Now).
+</div>

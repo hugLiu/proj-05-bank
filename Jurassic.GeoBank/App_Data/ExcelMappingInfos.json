@@ -1,0 +1,94 @@
+﻿[
+    {
+        "ColumnText": "标题",
+        "PropertyPath": "KMD.Title"
+    },
+    {
+        "ColumnText": "成果标题",
+        "PropertyPath": "KMD.Dc.Title[Type=Formal]"
+    },
+    {
+        "ColumnText": "类型",
+        "PropertyPath": "KMD.Dc.Type"
+    },
+    {
+        "ColumnText": "作者",
+        "PropertyPath": "KMD.Dc.Contributor[Type=Author]"
+    },
+    {
+        "ColumnText": "审核者",
+        "PropertyPath": "KMD.Dc.Contributor[Type=Auditor]"
+    },
+    {
+        "ColumnText": "提交者",
+        "PropertyPath": "KMD.Dc.Contributor[Type=Submitter]"
+    },
+    {
+        "ColumnText": "摘要",
+        "PropertyPath": "KMD.Dc.Description[Type=Abstract]"
+    },
+    {
+        "ColumnText": "创建日期",
+        "PropertyPath": "KMD.Dc.Date[Type=Created]"
+    },
+    {
+        "ColumnText": "提交日期",
+        "PropertyPath": "KMD.Dc.Date[Type=Submitted]"
+    },
+    {
+        "ColumnText": "地震工区",
+        "PropertyPath": "KMD.Ep.Bo[Type=Workarea]"
+    },
+    {
+        "ColumnText": "计算单元",
+        "PropertyPath": "KMD.Ep.Bo[Type=CalUnit]"
+    },
+    {
+        "ColumnText": "井区",
+        "PropertyPath": "KMD.Ep.Bo[Type=WellBlock]"
+    },
+    {
+        "ColumnText": "圈闭",
+        "PropertyPath": "KMD.Ep.Bo[Type=Trap]"
+    },
+    {
+        "ColumnText": "油气藏",
+        "PropertyPath": "KMD.Ep.Bo[Type=Pool]"
+    },
+    {
+        "ColumnText": "层位",
+        "PropertyPath": "KMD.Ep.Bo[Type=Stratum]"
+    },
+    {
+        "ColumnText": "井",
+        "PropertyPath": "KMD.Ep.Bo[Type=Well]"
+    },
+    {
+        "ColumnText": "辖区",
+        "PropertyPath": "KMD.Ep.Bo[Type=Organization]"
+    },
+    {
+        "ColumnText": "成果类型",
+        "PropertyPath": "KMD.Ep.Producttype"
+    },
+   {
+        "ColumnText": "成果来源",
+        "PropertyPath": "KMD.Ep.Scope"
+    },
+    {
+        "ColumnText": "业务域",
+        "PropertyPath": "KMD.Ep.Theme[Type=BD]"
+    },
+    {
+        "ColumnText": "业务类型",
+        "PropertyPath": "KMD.Ep.Theme[Type=BT]"
+    },
+    {
+        "ColumnText": "业务程序",
+        "PropertyPath": "KMD.Ep.Theme[Type=BP]"
+    },
+    {
+        "ColumnText": "业务活动",
+        "PropertyPath": "KMD.Ep.Theme[Type=BA]"
+    }
+]

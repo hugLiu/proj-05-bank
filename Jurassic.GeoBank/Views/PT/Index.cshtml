@@ -1,0 +1,180 @@
+﻿@using Jurassic.WebQuery;
+@using Jurassic.WebUpload;
+@{
+    ViewBag.Title = "成果管理";
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+    var treeNodeId = CommOp.ToInt(Request["Id"]);
+    var archiveType = (Model as object).GetType().Name;
+    var batch = Request["batch"];
+}
+
+<div id="winImport" class="mini-window" title="成果导入" style="width:800px;height:500px;display:none"
+     showmaxbutton="true" showcollapsebutton="true" showshadow="true"
+     showtoolbar="false" showfooter="true" showmodal="false" allowresize="true" allowdrag="true">
+    <div property="footer" style="text-align:right;padding:5px;padding-right:15px;">
+        <table cellpadding="0" cellspacing="0" width="100%">
+            <tr>
+                <td width="420">
+                    <div id="batchProgress" class="mini-progressbar" value="0" visible="false" style="width:420px"></div>
+                </td>
+                <td align="right">
+                    <label id="lblTips">在所有文件上传完毕后，请点击</label>
+                    <a class="mini-button frame-submit" id="btnStartImport">开始导入</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="width:100%; height:420px; overflow:auto">
+        @Html.Upload(new UploadFormData()
+   {
+       FormDataName = "FileIds",
+       ShowManager = false
+       //AllowedTypes = new string[] { ".jpg", ".png", ".gif", ".bmp" },
+       //MaxFileCount = 1,
+       //MaxFileSize = 1024 * 1024
+   })
+    </div>
+</div>
+<div class="mini-splitter frame-fit" style="width:100%;height:100%;">
+    <div size="60%" showcollapsebutton="true">
+        @*<a id="btn_All" checkonclick="true" checked="true" groupname="auth" class="mini-button" data-options="{val:0}" oncheckedchanged="onCheckedChanged">全部</a>
+            <a id="btn_Authed" checkonclick="true" groupname="auth" class="mini-button" data-options="{val:1}" oncheckedchanged="onCheckedChanged">未审核</a>
+            <a id="btn_NotAuthed" checkonclick="true" groupname="auth" class="mini-button" data-options="{val:2}" oncheckedchanged="onCheckedChanged">已审核</a>*@
+        @Html.AdvDataGrid()
+    </div>
+    <div showcollapsebutton="true">
+        <iframe id="editFrame" src="@Url.Action("Edit")" style="width:100%;height:100%" frameborder="0"></iframe>
+        @*@Html.AdvDataEdit()*@
+    </div>
+</div>
+<input type="hidden" id="treeNodeId" name="treeNodeId" />
+<script type="text/javascript">
+    mini.parse();
+    var treeNodeId = (@treeNodeId);
+    var batch = "@batch";
+    var grid = mini.get("grid_@archiveType");
+    var win = mini.get('winImport');
+    if (treeNodeId){
+        $('#treeNodeId').val(treeNodeId);
+        grid.setUrl("@Url.Action("GetData")" + "?id=" + treeNodeId);
+    }
+    else{
+        grid.setUrl("@Url.Action("GetData")" + "?batch=" + batch);
+    }
+    var editFrame = document.getElementById("editFrame");
+    var batchProgress = mini.get("batchProgress");
+    if (!grid.getSortField())
+    {
+        grid.setSortField("UploadedDate");
+        grid.setSortOrder("desc");
+    }
+
+    grid.on("selectionchanged", showDetails);
+    var rowIds = [];
+    grid.on("beforeload", function(e){
+        rowIds = grid.getSelecteds().cast(function(row){return row.Id;});
+    });
+
+    grid.on('load', function(e){
+        var rows = grid.findRows(function (row) {
+            return rowIds.indexOf(row.Id)>=0;
+        });
+        grid.selects(rows);
+        showDetails();
+    });
+
+    //grid.on("load", function(){
+    //    editFrame.contentWindow.updateForm();
+    //});
+
+    function showDetails(){
+        var selectedIds = grid.getSelecteds().cast(function(e){
+            return e.Id;
+        }).join(',');
+        $.newGET("@Url.Action("GetDetails")", {ids : selectedIds}, function(data){
+            editFrame.contentWindow.updateForm(data);
+        });
+    }
+
+    function setDataId(id) {
+        treeNodeId = id;
+        $('#treeNodeId').val(id);
+        if (!grid) return;
+        grid.setUrl("@Url.Action("GetData")" + "?id=" + treeNodeId);
+        grid.reload();
+    }
+
+    var isExcel = false;
+    $.regButton({
+        text:$.lang('批量导入'),
+        noSubmit:function(){
+            win.setTitle("批量导入");
+            win.show();
+            isExcel = false;
+        }
+    });
+
+    $.regButton({
+        text:$.lang('Excel导入'),
+        noSubmit:function(){
+            win.setTitle("Excel导入");
+            win.show();
+            isExcel = true;
+        }
+    });
+
+    $.regButton({
+        text:$.lang('刷新'),
+        noSubmit:function(){
+            grid.reload();
+        }
+    });
+
+    $.regButton({
+        text:$.lang('开始导入'),
+        beforeSubmit:function(ajax){
+            if (!$('[name=FileIds]').val()){
+                alert("没有文件,请先上传成果文件");
+                return false;
+            }
+
+            ajax.url = isExcel? "@Url.Action("BatchExcel")" : "@Url.Action("Batch")";
+        },
+        afterSubmit:function(data){
+            batchProgress.setVisible(false);
+            $('#lblTips').show();
+            win.hide();
+            cbx.setUrl('@Url.Action("GetBatchList")');
+            grid.reload();
+        }
+    });
+
+    $(function () {
+        if (treeNodeId) {
+            var pttree = top.mini.get("ptTree");
+            if (pttree){
+                pttree.setValue(treeNodeId);
+            }
+        }
+    });
+
+    $('body').bind('onAlert', function(idx, progress){
+        $('#lblTips').hide();
+        batchProgress.setVisible(true);
+        batchProgress.setValue(progress.p);
+
+        //移除上传表格中对应文件的行(tr)
+        $('#download_' + progress.id).remove();
+    });
+
+    var cbx = mini.get("pt-batchlist");
+    cbx.set({
+        url : '@Url.Action("GetBatchList")',
+        valuefromselect:true,
+        width:'200'
+    });
+    cbx.on("valuechanged", function(){
+        grid.setUrl("@Url.Action("GetData")" + "?batch=" + cbx.getValue());
+        grid.reload();
+    });
+</script>

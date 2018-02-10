@@ -1,0 +1,409 @@
+cs231n
+ppt：
+技术增量
+功能实现流程
+
+执业中药师
+
+中药专一
+中药专二
+综合知识与技能
+
+培训班
+讲义或者视频 doc
+重点
+
+甲方办公
+10.72.23.247
+255.255.255.0
+10.72.23.254
+10.72.6.21
+10.72.6.22
+
+新疆业务办公
+10.72.31.161
+255.255.255.192
+10.72.31.190
+10.72.6.21
+10.72.6.22
+
+
+武汉办公
+192.168.1.199
+255.255.254.0
+192.168.1.1
+202.103.24.68
+202.103.0.117
+上线部署需要对方做什么（服务器）
+
+项目
+业务标准体系建设
+
+对象库，
+索引库，
+成果库，是做什么的、管理成果
+
+日志库，
+系统库
+
+powerdesign图
+mongo
+
+proj4
+
+都使用经纬度坐标
+大地坐标
+
+新加图层的样式问题
+
+{"indexeddate": {$gte:new Date("2017-05-04")}}
+
+http://192.168.1.152:8089/GTAPI/AdapterService/GetCapabilitieshttp://192.168.1.152:8089/GTAPI/SubmissionService/GetCapabilities
+
+teamviewer
+714357430
+18600961873
+
+虚拟机 192.168.86.129
+
+10.72.20.236
+kfsxjyt-123
+
+proxy.xj.petrochina  8080
+
+947217466/123456
+
+10.72.113.20
+255.255.255.128
+10.72.113.1
+10.72.6.21
+10.72.6.22
+
+系统	Windows Server 2008R2/2012  64位 		
+硬件	四核/八核， 8G/16G （说明：一块固态硬盘1T/2T ，一块数据存储盘、用于成果文件的存储（根据成果文件的大小来确定硬盘容量））		
+软件（消耗存储）	数据库	SqlServer 2012	7G-10G
+软件（消耗存储）	数据库	MongoDB	1G,
+软件（消耗存储）	应用程序	GeoTopic，GeoBank，GTAPI,  GBAPI，Spider	1G
+
+
+1. 访问量 整个重油公司
+2.数据量
+
+硬件要求，软件要求
+
+app所需要求
+
+excel文档
+
+问题汇总：
+0.评论论坛，互相交流发帖
+1.因为屏幕分辨率和尺寸，页面的各个格子宽度不适应。
+2.基础信息菜单子页面 加入 成果信息，直接显示该成果列表信息。
+3.geobank整合有问题
+4.系统管理页怎么回退到首页
+5.xp 问题
+6.动态成图
+7.页面加载速度慢
+8.cs版？
+
+重油项目情况：
+1.geotopic的cookie问题、页面个性化显示成果问题（大熊，dc.type 上传工具 excel加入type字段） （ok）
+2.geobank的成果提交问题 （王工，成果上传是否提交索引库）(上传)
+3.页面加入折叠功能后，页面样式问题
+4.知识卡成果下载记录问题(表，postman页面速度) （有时候不慢，做了数据的统计（下载次数、浏览次数），每页还是加载10条）
+5.地震工区成果列表需要地震单元与成果一一对应  （ok）
+6.计算单元（部分）需要细分（业务逻辑）
+7. 成果类型下拉 （ok）
+8.井区下有层系（ok）
+新建知识模板.xlsx
+
+注意：1.bank数据表更新
+2.gtapi gbapi 更新
+3.gtapi，批量提交工具  元数据定义文件更新
+
+
+152 sooil jurassic
+239 administrator moss@55.cn
+ 
+
+
+
+图库
+
+1. 测试框架对oracle支持
+
+
+
+
+
+
+
+
+
+
+浏览系统前需要安装：
+	JoGis--浏览图件；
+	Adobe reader--浏览成果（pdf形式）
+	IE11（64位）--浏览器版本
+
+
+
+成果浏览系统地址：http://10.72.113.20:8810/
+成果上传系统地址：http://10.72.113.20:8814/ （有2种上传工具，单机CS/浏览器BS）
+用户名/密码： administrator/888888
+
+
+文件下载&使用说明
+
+1. jogis 下载链接
+说明：xxxxx
+
+2. adobe 下载链接
+说明：
+...
+
+
+注意事项
+1. 成果上传系统地址：http://10.72.113.20:8814/
+2. xxx
+
+
+
+图库：
+gms 图件生成时调用api的提交服务，推送到索引库？
+
+
+重油
+1. 去掉asyns?
+
+
+
+
+
+
+
+
+
+图库准备工作
+1. 数据库(gf,gms,appdata,userdata,exchange(中转加工数据)，sysframe,gtapi)
+2. 地图（）
+3. gms web版, gf web版、采集工具,geobank 单机版，redis 服务（创建服务），mongodb，ojdb,sqlserver(提交工具会用？)，kettle，
+4. 图库发布版本
+
+
+1、图库数据库备份导出初始化数据
+	APPDATA		应用数据
+	EXCHAGE		中转加工数据
+	GEOFEATRUE	GF
+	GEOMAPSERVER	GMS
+	GTAPI		API
+	SYSFRAME	系统框架
+	USERDATA	用户数据
+exp geofeature/geofeature@XJ-EPGL-239 file="d:\orac\GeoFeature2017.10.9.dmp" owner=GeoFeature;
+exp appdata/appdata@XJ-EPGL-239 file="d:\orac\APPDATA2017.10.9.dmp" owner=APPDATA;
+exp geomapserver/geomapserver@XJ-EPGL-239 file="d:\orac\GEOMAPSERVER2017.10.9.dmp" owner=GEOMAPSERVER;
+exp exchage/exchage@XJ-EPGL-239 file="d:\orac\EXCHAGE2017.10.9.dmp" owner=EXCHANGE;
+exp gtapi/gtapi@XJ-EPGL-239 file="d:\orac\GTAPI2017.10.9.dmp" owner=GTAPI;
+exp sysframe/sysframe@XJ-EPGL-239 file="d:\orac\SYSFRAME2017.10.9.dmp" owner=SYSFRAME;
+exp userdata/userdata@XJ-EPGL-239 file="d:\orac\USERDATA2017.10.9.dmp" owner=USERDATA; 
+
+exp appdata/appdata@10.72.16.196/orcl file=d:\appdata1114.dmp statistics=none TABLES=(APPDATACLASS,appdatamodel,oilfielddata,temp_themedata)QUERY=\"WHERE rownum<10000000\"
+
+2、Google卫星、地形图资源 1~17级约300G
+
+3、应用环境组件
+	JOGIS		JoGIS4组件安装包1.51.0000
+	JOWEB		JoWeb组件安装包1.53.3000/JoWeb组件安装包1.53.4000
+	ORACLE11GR2	
+	MSSQLSERVER2012	
+	Redis-Server
+	RedisDesktopManager
+	Kettle Spoon 7.1
+	ojdbc7.jar
+	MongoDB
+	jdk_1.8.0.0_64.exe
+
+4、图库应用部署资源
+	EPGL		80
+	GTAPI		7711
+	GBAPI		7713
+	GB-APP		7714
+	GF-APP		7716
+	GMS-APP		7717
+	成果图件提交工具
+	GF采集工具
+	ETL脚本
+5、现场工作
+
+
+create tablespace APPDATA datafile 'D:\oracle\dbf\appdata.dbf' size 500m;
+create user appdata identified by appdata default tablespace APPDATA;
+grant connect , resource ,dba to appdata;
+
+
+create tablespace EXCHANGE datafile 'D:\oracle\dbf\exchange.dbf' size 500m;
+create user exchange identified by exchange default tablespace EXCHANGE;
+grant connect , resource ,dba to exchange;
+
+create tablespace GEOFEATURE datafile 'D:\oracle\dbf\geofeature.dbf' size 500m;
+create user geofeature identified by geofeature default tablespace GEOFEATURE ;
+grant connect , resource ,dba to geofeature;
+
+create tablespace GEOMAPSERVER datafile 'D:\oracle\dbf\geomapserver.dbf' size 500m;
+create user geomapserver identified by geomapserver default tablespace GEOMAPSERVER;
+grant connect , resource ,dba to geomapserver;
+
+create tablespace GTAPI datafile 'D:\oracle\dbf\gtapi.dbf' size 500m;
+create user gtapi identified by gtapi default tablespace GTAPI;
+grant connect , resource ,dba to gtapi;
+
+create tablespace SYSFRAME datafile 'D:\oracle\dbf\sysframe.dbf' size 500m;
+create user sysframe identified by sysframe default tablespace SYSFRAME;
+grant connect , resource ,dba to sysframe;
+
+create tablespace USERDATA datafile 'D:\oracle\dbf\userdata.dbf' size 500m;
+create user userdata identified by userdata default tablespace USERDATA;
+grant connect , resource ,dba to userdata ;
+
+
+imp appdata/appdata@ORCL file="D:\TK\orac\APPDATA2017.10.9.dmp" full=y
+imp exchange/exchange@ORCL file="D:\TK\orac\EXCHAGE2017.10.9.dmp" full=y
+imp geofeature/geofeature@ORCL file="D:\TK\orac\GeoFeature2017.10.9.dmp" full=y
+imp geomapserver/geomapserver@ORCL file="D:\TK\orac\GEOMAPSERVER2017.10.9.dmp" full=y
+imp gtapi/gtapi@ORCL file="D:\TK\orac\GTAPI2017.10.9.dmp" full=y
+imp sysframe/sysframe@ORCL file="D:\TK\orac\SYSFRAME2017.10.9.dmp" full=y
+imp userdata/userdata@ORCL file="D:\TK\orac\USERDATA2017.10.9.dmp" full=y
+
+
+
+1.谢艳阳（文档准备好？）
+2.黄工（使用是否可以）
+
+1.苏纽宾，粟巩 数据连接/杨总给账号密码，地层数据一致
+2.产能方案demo
+3.明天打标签培训
+
+
+图数联动只针对准噶尔盆地，非油田油藏
+
+
+10.72.16.196
+administrator
+Ktkfyjy@196
+
+
+
+mongodb2种部署方式
+一.非权限部署
+1.data/db data/log  
+2.bin 目录下安装db  E:\MongoDB\bin  mongod -dbpath E:\MongoDB\data\db
+3.安装mongondb服务
+mongod -dbpath "E:\Work_App\MongoDB\Data\db" -logpath "E:\Work_App\MongoDB\Data\log\MongoDB.log" -install -serviceName "MongoDB"（这里必须以管理员身份运行）
+
+二.权限部署
+首先，先关闭auth认证启动服务
+D:
+cd D:\MongoDB\Server\3.2\bin
+mongod --dbpath D:\mongodb\data
+
+然后，修改system.version里authSchema的currentVersion为3，默认是5（没有创建用户的话version是null，随便创建一个用户version就出现了，这个时候创建的用户的验证方式是默认的5，所以到时候是要删除的）
+
+> use admin 
+switched to db admin 
+> var s= db.system.version.findOne({"_id" : "authSchema"}) 
+> s.currentVersion = 3 
+3 
+> db.system.version.save(s) 
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 }) 
+
+这个时候验证方式就修改好了，然后再创建的用户的验证方式就变成3了
+
+>use admin
+>db.createUser({user:"admin",pwd:"admin",roles:[{role:"root",db:"admin"}]}) 
+ 
+最后，以auth启动服务，就能用旧驱动验证了
+D:
+cd D:\MongoDB\Server\3.2\bin
+mongod --dbpath D:\mongodb\data -auth
+ 
+mongodb C#连接报错 Invalid credentials for database 'admin'
+
+
+（仅供参考：
+1.mongod.exe --remove --serviceName "MongoDB"  
+mongod --dbpath "E:\RECP\MongoDB\Data\db" --logpath "E:\RECP\MongoDB\Data\log\MongoDB.log"  --auth --install --serviceName "MongoDB"  
+net start MongoDB  
+use admin  
+db.createUser({user: "root",pwd: "root",roles: [ { role: "root", db: "admin" } ]});(这个命令是解决问题的重点)  
+exit  
+
+2.mongo --port 27017 -u admin -p password --authenticationDatabase admin  
+创建数据库lxkdb，当在这个数据库写入数据的时候，这个数据库就出现了。  
+use lxkdb  
+创建普通账户  
+db.createUser({user: "tester",pwd: "password",roles: [{ role: "readWrite", db: "lxkdb" }]});  
+选择刚刚创建的数据库  
+use lxkdb  
+然后进行数据库权限的认证，返回1就是认证OK，0就是认证失败。这个也是重点，在操作数据库之前要有那么一次的权限 认证。这个不是你从那个admin数据库切换到这个lxkdb数据库了吗，所以要权限认证一下，最好认证一下，  
+db.auth('tester','password')  
+
+关于在创建用户的时候，那个roles的不同类型的理解。不知道全不全。
+roles 用户角色:
+1. 数据库用户角色：read、readWrite;
+2. 数据库管理角色：dbAdmin、dbOwner、userAdmin；
+3. 集群管理角色：clusterAdmin、clusterManager、clusterMonitor、hostManager；
+4. 备份恢复角色：backup、restore；
+5. 所有数据库角色：readAnyDatabase、readWriteAnyDatabase、userAdminAnyDatabase、dbAdminAnyDatabase
+6. 超级用户角色：root）
+
+proxy.xj.petrochina
+8080
+http://10.72.113.39:8810;127.0.0.1
+
+
+A2(新疆油田数据源):
+10.72.5.138 
+peo_user
+peouser2014#
+服务名：o10gasm
+
+
+工程所采油平台：
+10.71.216.54
+administrator
+gcyfwq_54
+
+获取表字段数：select count(1) from user_col_comments where table_name = upper( 'DBA041');
+
+
+样式单，西安
+
+
+图库数据目前整理情况：
+1钻井数据表（钻井基础数据）：（取整张钻井基础数据表，不管字段）daa01                          
+2油藏储量数据：以现有excel为准；                       
+3气藏储量数据：以现有excel为准；
+4稠油采油井产量数据：以哪张表为主表？   （DBA041）
+5稀油采油井产量数据：                （DBA04）
+6注水井产量数据：DBA05  ；               （DBA05）
+7采气井产量数据：以哪张表为主表？         （DBA043）
+8稀油采油井开采曲线数据：以哪张表为主表？    （DBA04）
+10稀油采油井开发现状数据：以哪张表为主表？    （DBA04）
+12采气井开发现状数据：以哪张表为主表？       （DBA043）
+11注水井开发现状数据：以哪张表为主表？     （DBA05）
+
+temaviewer:273327992， 123
+用户体验：
+首页：菜单放左边
+功能模块命名：贴近业务命名
+
+
+时间: 199901  
+总井数: sum(井)  Total
+开井数: sum(生产天数>0 井）DevWells
+静压: 当前年月的所有静压大于0 的平均静压值  AveJY
+流压: 当前年月的所有流压大于0 的平均流压值  AveLY
+总日产油: sum(单井月产油量/生产天数)   TotalDailyOil
+总日注水: sum(单井月注水量/dba05 生产天数)  TotalDailyWater
+综合含水：sum(月产水量)/sum(月产水量)+sum(月产油量) * 100  WaterScale
+单井平均日产油： 总日产油/开井数 OilAve

@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jurassic.WebSchedule</name>
+    </assembly>
+    <members>
+        <member name="M:Jurassic.WebSchedule.ApiControllers.MessageController.Send(Jurassic.CommonModels.Messages.JMessage)">
+            <summary>
+            接收外部系统发过来的消息
+            </summary>
+            <param name="msg">消息实体</param>
+            <returns>发送结果</returns>
+        </member>
+        <member name="T:Jurassic.WebSchedule.BroadcastProcesser">
+            <summary>
+            向全体发送广播消息的消息处理器
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebSchedule.Controllers.ScheduleController">
+            <summary>
+            用户日程表的控制器
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.GetEvents(System.DateTime,System.DateTime)">
+            <summary>
+            获取所有用户事件
+            </summary>
+            <param name="start"></param>
+            <param name="end"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.Edit(System.Boolean,System.Nullable{System.DateTime},System.Nullable{System.DateTime},System.Int32)">
+            <summary>
+            点击或拖动某个空白区(id=0)，或点击某个日程(id>0)， 显示弹窗界面
+            </summary>
+            <param name="start"></param>
+            <param name="caId"></param>
+            <param name="end"></param>
+            <param name="allDay"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.Read(System.Int32)">
+            <summary>
+            读取消息 
+            </summary>
+            <param name="caId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.Edit(Jurassic.CommonModels.Articles.Base_Article,System.Int32)">
+            <summary>
+            接受弹窗编辑界面的提交数据
+            </summary>
+            <param name="a"></param>
+            <param name="caId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.Drag(System.Int32,System.Int32,System.Nullable{System.DateTime})">
+            <summary>
+            接受界面的拖动产生的修改
+            </summary>
+            <param name="caId">日程信息ID</param>
+            <param name="delta">拖动产生的时间差(分钟数），用于事件整个拖动</param>
+            <param name="end">是只拖动下端产生的新时间</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.Delete(System.Int32)">
+            <summary>
+            删除一项日程
+            </summary>
+            <param name="id">Base_Article的ID</param>
+            <returns>结果提示</returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.GetAlerts(Jurassic.CommonModels.Articles.PageModel)">
+            <summary>
+            获取用户的到期提醒事项Json数据
+            </summary>
+            <param name="pm">页面传递的分页对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.GetAllAlerts(Jurassic.CommonModels.Articles.PageModel)">
+            <summary>
+            获取用户的到期提醒事项Json数据,在管理页
+            </summary>
+            <param name="pm">页面传递的分页对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.GetExtInfos">
+            <summary>
+            获取扩展菜单信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.Clear">
+            <summary>
+            清空当前用户的所有消息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.MessageManager">
+            <summary>
+            打开消息管理界面
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.Controllers.ScheduleController.ReadAll">
+            <summary>
+            将所有消息设置成只读
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.WebSchedule.MvcApplication1">
+            <summary>
+            默认的启动程序
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebSchedule.ProcesserHub">
+            <summary>
+            用于后台处理消息队列的signalr集线器类
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebSchedule.ProcesserHub.GetAllProcessers">
+            <summary>
+            获取所有后台处理器的列表
+            </summary>
+            <returns>所有后台处理器的列表</returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.ProcesserHub.AddGroup(System.String)">
+            <summary>
+            添加一个用于消息通信的组
+            </summary>
+            <param name="groupId">组的ID</param>
+        </member>
+        <member name="M:Jurassic.WebSchedule.ScheduleExtensions.Schedule(System.Web.Mvc.HtmlHelper,Jurassic.WebSchedule.ScheduleFormData)">
+            <summary>
+            根据初始化对象创建一个日程表
+            </summary>
+            <param name="htmlHelper">HTML帮助类</param>
+            <param name="formData">初始化参数类</param>
+            <returns>日程表</returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.ScheduleExtensions.Schedule(System.Web.Mvc.HtmlHelper,System.String)">
+            <summary>
+            根据指定元素ID创建一个日程表
+            </summary>
+            <param name="htmlHelper">HTML帮助类</param>
+            <param name="elementId">HTML元素的ID</param>
+            <returns>日程表</returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.ScheduleExtensions.Schedule(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            根据默认初始化参数创建一个日程表
+            </summary>
+            <param name="htmlHelper">HTML帮助类</param>
+            <returns>日程表</returns>
+        </member>
+        <member name="M:Jurassic.WebSchedule.ScheduleExtensions.AlertFast(Jurassic.CommonModels.Messages.MessageManager,System.Int32,System.Object)">
+            <summary>
+            主要是为了及时提醒用户，作为原有的轮询消息的补充，因为原有的轮询是半分钟一次，
+            如果有重要消息要提醒，可以使用此方法强制用户刷一下最新消息，或者指定消息提醒
+            </summary>
+            <param name="manager">消息管理器</param>
+            <param name="userId">用户ID</param>
+            <param name="alertMessage">如果为空，则强制用户刷一下消息，以更新左侧菜单和顶部消息图标中的数字，如果有值，则用此值通知用户，并在框架子页面处理具体消息</param>
+        </member>
+        <member name="T:Jurassic.WebSchedule.ScheduleFormData">
+            <summary>
+            用于初始化日程表控件的表单数据对象
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebSchedule.ScheduleFormData.ElementId">
+            <summary>
+            承载日程表的HTML对象的ID，默认为"schedule"
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebSchedule.ScheduleFormData.DefaultDate">
+            <summary>
+            基准日期，默认为当前日期
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebSchedule.ScheduleFormData.Editable">
+            <summary>
+            是否可编辑
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebSchedule.ScheduleFormData.#ctor">
+            <summary>
+            使用默认值创建一个日程表初始化数据对象
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebSchedule.SignalRProcesserFactory">
+            <summary>
+            基于SingalR的处理器工厂
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebSchedule.SignalRProcesserFactory.Instance">
+            <summary>
+            基于SignalR处理器工厂的单例
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebSchedule.StartupConfig">
+            <summary>
+            在应用程序启动时初始化
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,21 @@
+﻿@*WebSchedule组件提供的默认视图*@
+@using Jurassic.WebSchedule;
+@{
+    ViewBag.ShowSearchBox = false;
+    ViewBag.ShowToolBar = false;
+}
+<div class="mini-xs mini-sm mini-md mini-md-active">
+    <div class="container-fluid ">
+        <div class="mini-clearfix">
+            <div class="mini-col-12">
+                <div class="mini-panel layout-panel  frame-fit" showHeader="false" width="auto" showCollapseButton="flase" showCloseButton="flase">
+                    <div id='schedule' class="col-xs-12 col-md-10 col-lg-8"></div>
+                    @Html.Schedule(new ScheduleFormData { Editable = true })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>

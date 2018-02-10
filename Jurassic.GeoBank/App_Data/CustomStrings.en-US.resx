@@ -1,0 +1,1554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Confirm_Delete" xml:space="preserve">
+    <value>Confirm delete?</value>
+  </data>
+  <data name="元数据树" xml:space="preserve">
+    <value />
+  </data>
+  <data name="元数据管理" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GeoBankRoot_PropertyManager" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GeoBankRoot_CatalogID" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GeoBankRoot_CatalogName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="自定义查询" xml:space="preserve">
+    <value>Custom Query</value>
+  </data>
+  <data name="Query.ArchiveModel.Id" xml:space="preserve">
+    <value>Id</value>
+  </data>
+  <data name="Query.ArchiveModel.CreateTime" xml:space="preserve">
+    <value>CreateTime</value>
+  </data>
+  <data name="Query.ArchiveModel.Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Query.ArchiveModel.ProductType" xml:space="preserve">
+    <value>ProductType</value>
+  </data>
+  <data name="Query.ArchiveModel.Uploader" xml:space="preserve">
+    <value>Uploader</value>
+  </data>
+  <data name="Query.ArchiveModel.Author" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="Query.ArchiveModel.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Query.ArchiveModel.Authentic" xml:space="preserve">
+    <value>Authentic</value>
+  </data>
+  <data name="Query.ArchiveModel.UploadedDate" xml:space="preserve">
+    <value>UploadedDate</value>
+  </data>
+  <data name="LoginState_UserOrPasswordError" xml:space="preserve">
+    <value>User or Password Error</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value />
+  </data>
+  <data name="System_ShortName" xml:space="preserve">
+    <value>GeoBank Achievement Management System</value>
+  </data>
+  <data name="System_CompanyName" xml:space="preserve">
+    <value>Beijing Jurassic Software co, ltd.</value>
+  </data>
+  <data name="Account_empty" xml:space="preserve">
+    <value>Account Empty</value>
+  </data>
+  <data name="Password_empty" xml:space="preserve">
+    <value>Password_Empty</value>
+  </data>
+  <data name="Rememberme" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Forgot  password</value>
+  </data>
+  <data name="System_Copyright" xml:space="preserve">
+    <value>Copyright &amp;copy; 2015  Jurassic, all rights reserved</value>
+  </data>
+  <data name="System_CompanyInfo" xml:space="preserve">
+    <value>Address：Huizi Tower, B, 9F , Haidian, Beiing Tel：010-82730099</value>
+  </data>
+  <data name="正在登录" xml:space="preserve">
+    <value>Loging...</value>
+  </data>
+  <data name="System_Name" xml:space="preserve">
+    <value>GeoBank Achievement Management System</value>
+  </data>
+  <data name="新增" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="功能管理" xml:space="preserve">
+    <value>Functions</value>
+  </data>
+  <data name="新增平级" xml:space="preserve">
+    <value>New Brother</value>
+  </data>
+  <data name="保存" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="新增语种" xml:space="preserve">
+    <value>Add Culture</value>
+  </data>
+  <data name="新部门" xml:space="preserve">
+    <value>New Dept</value>
+  </data>
+  <data name="增加目录" xml:space="preserve">
+    <value>Add Catalog</value>
+  </data>
+  <data name="删除" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="添加链接条件" xml:space="preserve">
+    <value>Add Link</value>
+  </data>
+  <data name="删除语种" xml:space="preserve">
+    <value>Delete Culture</value>
+  </data>
+  <data name="删除目录" xml:space="preserve">
+    <value>Delete Catalog</value>
+  </data>
+  <data name="新增子级" xml:space="preserve">
+    <value>Add Child</value>
+  </data>
+  <data name="角色管理" xml:space="preserve">
+    <value>Role Manager</value>
+  </data>
+  <data name="恢复默认" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="编辑" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="清空" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="新子部门" xml:space="preserve">
+    <value>Add Child Dept</value>
+  </data>
+  <data name="报表输出" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="文件上传" xml:space="preserve">
+    <value>File Upload</value>
+  </data>
+  <data name="添加筛选条件" xml:space="preserve">
+    <value>Add Filter</value>
+  </data>
+  <data name="复制" xml:space="preserve">
+    <value>Copy</value>
+  </data>
+  <data name="用户管理" xml:space="preserve">
+    <value>User Manager</value>
+  </data>
+  <data name="新增条目" xml:space="preserve">
+    <value>Add Item</value>
+  </data>
+  <data name="编辑部门" xml:space="preserve">
+    <value>Edit Dept</value>
+  </data>
+  <data name="编辑目录" xml:space="preserve">
+    <value>Edit Catalog</value>
+  </data>
+  <data name="报表示例" xml:space="preserve">
+    <value>Report Demo</value>
+  </data>
+  <data name="添加排序条件" xml:space="preserve">
+    <value>Add Sort</value>
+  </data>
+  <data name="删除条目" xml:space="preserve">
+    <value>Delete Item</value>
+  </data>
+  <data name="语言管理" xml:space="preserve">
+    <value>Culture Manager</value>
+  </data>
+  <data name="删除部门" xml:space="preserve">
+    <value>Delete Dept</value>
+  </data>
+  <data name="上传文件" xml:space="preserve">
+    <value>Upload File</value>
+  </data>
+  <data name="Knockout示例" xml:space="preserve">
+    <value>Knockout Demo</value>
+  </data>
+  <data name="生成SQL语句" xml:space="preserve">
+    <value>Create Sql</value>
+  </data>
+  <data name="授权" xml:space="preserve">
+    <value>Authorize</value>
+  </data>
+  <data name="日志管理" xml:space="preserve">
+    <value>LogManager</value>
+  </data>
+  <data name="保存部门" xml:space="preserve">
+    <value>Save Dept</value>
+  </data>
+  <data name="删除文件" xml:space="preserve">
+    <value>Delete File</value>
+  </data>
+  <data name="SignalR示例" xml:space="preserve">
+    <value>SignR Demo</value>
+  </data>
+  <data name="清空所有资源" xml:space="preserve">
+    <value>Clear All Res.</value>
+  </data>
+  <data name="上移" xml:space="preserve">
+    <value>MoveUp</value>
+  </data>
+  <data name="授权页面" xml:space="preserve">
+    <value>Auth Page</value>
+  </data>
+  <data name="组织管理" xml:space="preserve">
+    <value>Dept Manager</value>
+  </data>
+  <data name="增加岗位" xml:space="preserve">
+    <value>Add Position</value>
+  </data>
+  <data name="复制文件" xml:space="preserve">
+    <value>Copy Files</value>
+  </data>
+  <data name="Excel预览" xml:space="preserve">
+    <value>Excel Preview</value>
+  </data>
+  <data name="系统管理" xml:space="preserve">
+    <value>System Manager</value>
+  </data>
+  <data name="下移" xml:space="preserve">
+    <value>Move Down</value>
+  </data>
+  <data name="编辑岗位" xml:space="preserve">
+    <value>Edit Position</value>
+  </data>
+  <data name="文件上传管理" xml:space="preserve">
+    <value>File Manager</value>
+  </data>
+  <data name="移动文件" xml:space="preserve">
+    <value>Move Files</value>
+  </data>
+  <data name="图表" xml:space="preserve">
+    <value>Chart</value>
+  </data>
+  <data name="移动" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="删除岗位" xml:space="preserve">
+    <value>Delete Culture</value>
+  </data>
+  <data name="文件属性编辑" xml:space="preserve">
+    <value>File Attr Edit</value>
+  </data>
+  <data name="内容管理- 留言板" xml:space="preserve">
+    <value>CMS - NoteBook</value>
+  </data>
+  <data name="岗位安排" xml:space="preserve">
+    <value>Position Post</value>
+  </data>
+  <data name="编辑页" xml:space="preserve">
+    <value>Edit Page</value>
+  </data>
+  <data name="首页管理" xml:space="preserve">
+    <value>HomePage Manager</value>
+  </data>
+  <data name="目录编辑页" xml:space="preserve">
+    <value>Catalog Edit Page</value>
+  </data>
+  <data name="示例" xml:space="preserve">
+    <value>Demo</value>
+  </data>
+  <data name="添加部门人员" xml:space="preserve">
+    <value>Add Dept User</value>
+  </data>
+  <data name="日程表" xml:space="preserve">
+    <value>Schedule</value>
+  </data>
+  <data name="MD5校验" xml:space="preserve">
+    <value>MDE Verify</value>
+  </data>
+  <data name="移除部门人员" xml:space="preserve">
+    <value>Move Dept User</value>
+  </data>
+  <data name="编辑器" xml:space="preserve">
+    <value>Editor</value>
+  </data>
+  <data name="初始化" xml:space="preserve">
+    <value>Init</value>
+  </data>
+  <data name="栏目管理" xml:space="preserve">
+    <value>Catalog Manger</value>
+  </data>
+  <data name="RoleNames" xml:space="preserve">
+    <value>Role Names</value>
+  </data>
+  <data name="Please select a user" xml:space="preserve">
+    <value>Plz select a user.</value>
+  </data>
+  <data name="请选择要删除的行" xml:space="preserve">
+    <value>Please Select Lines You Want To Delete</value>
+  </data>
+  <data name="确定删除？" xml:space="preserve">
+    <value>Sure To Delete？</value>
+  </data>
+  <data name="Parameter" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="CSS" xml:space="preserve">
+    <value>Css</value>
+  </data>
+  <data name="保存所有修改" xml:space="preserve">
+    <value />
+  </data>
+  <data name="确定要清空所有日志?" xml:space="preserve">
+    <value>Sure To Clean All Log？</value>
+  </data>
+  <data name="Add files..." xml:space="preserve">
+    <value>Add files...</value>
+  </data>
+  <data name="Cancel upload" xml:space="preserve">
+    <value>Cancel upload</value>
+  </data>
+  <data name="Uploading..." xml:space="preserve">
+    <value>Uploading...</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Please select a record" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Start upload" xml:space="preserve">
+    <value>Start Upload</value>
+  </data>
+  <data name="FunctionsManager" xml:space="preserve">
+    <value>Functions Manager</value>
+  </data>
+  <data name="RolesManager" xml:space="preserve">
+    <value>Roles Manager</value>
+  </data>
+  <data name="UsersManager" xml:space="preserve">
+    <value>Users Manager</value>
+  </data>
+  <data name="ResourcesManager" xml:space="preserve">
+    <value>Resources Manager</value>
+  </data>
+  <data name="InitFinishedAndRuningPerfect" xml:space="preserve">
+    <value>Init Finished And Runing Perfect</value>
+  </data>
+  <data name="Functions" xml:space="preserve">
+    <value>Functions</value>
+  </data>
+  <data name="ReInit" xml:space="preserve">
+    <value>ReInit</value>
+  </data>
+  <data name="ReGenerateFunctions_DontDeleteRolesAndUsers" xml:space="preserve">
+    <value>ReGenerate Functions, DontDeleteRolesAndUsers</value>
+  </data>
+  <data name="FirstPage" xml:space="preserve">
+    <value>FirstPage</value>
+  </data>
+  <data name="AppCenter" xml:space="preserve">
+    <value>AppCenter</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="AfterSaveAllRes_YouCanEditInVs" xml:space="preserve">
+    <value>After save all resources, you can edit in visual studio.</value>
+  </data>
+  <data name="ParentNoId" xml:space="preserve">
+    <value>Parent No Id</value>
+  </data>
+  <data name="Duplicated Name" xml:space="preserve">
+    <value>Duplicated Name</value>
+  </data>
+  <data name="ConfirmReInit" xml:space="preserve">
+    <value>Confirm Reinit?</value>
+  </data>
+  <data name="System_Company_Url" xml:space="preserve">
+    <value>http://www.jurassic.com.cn</value>
+  </data>
+  <data name="Success_Update_UserInfo_{0}" xml:space="preserve">
+    <value>UserInfo {0} Success updated</value>
+  </data>
+  <data name="Success_Save" xml:space="preserve">
+    <value>Save Successe</value>
+  </data>
+  <data name="Success_Save_{0}" xml:space="preserve">
+    <value>{0}Success Saved</value>
+  </data>
+  <data name="Login Failed" xml:space="preserve">
+    <value>Login Failed</value>
+  </data>
+  <data name="ClearAllCacheFiles" xml:space="preserve">
+    <value>Clear All Cache Files</value>
+  </data>
+  <data name="ClearCacheFiles" xml:space="preserve">
+    <value>Clear Cache Files</value>
+  </data>
+  <data name="Please Enter Your Email" xml:space="preserve">
+    <value>Please Enter Your Email</value>
+  </data>
+  <data name="Success_Delete" xml:space="preserve">
+    <value>Delete Successee</value>
+  </data>
+  <data name="{0}_NotExist" xml:space="preserve">
+    <value>{0} Not Exist</value>
+  </data>
+  <data name="Success_Clone" xml:space="preserve">
+    <value>Clone Successe</value>
+  </data>
+  <data name="Resources_Saved" xml:space="preserve">
+    <value>Save Resources Successfully</value>
+  </data>
+  <data name="Log_Delete_Success" xml:space="preserve">
+    <value>Delete Log Successfully</value>
+  </data>
+  <data name="Log_Clear_Success" xml:space="preserve">
+    <value>Delete All The Log Successfully</value>
+  </data>
+  <data name="Delete_Success" xml:space="preserve">
+    <value>Delete Successfully</value>
+  </data>
+  <data name="Delete_Error" xml:space="preserve">
+    <value>Delete Failed</value>
+  </data>
+  <data name="Role_NotFound" xml:space="preserve">
+    <value>Fail To Find The Role</value>
+  </data>
+  <data name="Add_Success" xml:space="preserve">
+    <value>Add Successfully</value>
+  </data>
+  <data name="{0}_Add_Success" xml:space="preserve">
+    <value>Add {0} Successfully</value>
+  </data>
+  <data name="修改密码" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="注销" xml:space="preserve">
+    <value>Logout</value>
+  </data>
+  <data name="Message_Alert" xml:space="preserve">
+    <value>Alerts</value>
+  </data>
+  <data name="No_Message_Alert" xml:space="preserve">
+    <value>暂无消息</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="FinishTime" xml:space="preserve">
+    <value>完成时间</value>
+  </data>
+  <data name="流程设计" xml:space="preserve">
+    <value />
+  </data>
+  <data name="流程管理" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Success_Move" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Success_Move_{0}" xml:space="preserve">
+    <value />
+  </data>
+  <data name="已经位于末尾" xml:space="preserve">
+    <value>Already In The End</value>
+  </data>
+  <data name="新建流程" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Success_Submit_WorkFlow" xml:space="preserve">
+    <value />
+  </data>
+  <data name="提交成功！" xml:space="preserve">
+    <value />
+  </data>
+  <data name="待办流程" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Tel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreaterName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreaterId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="CreateTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Level" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Enum.SupplierLevel.Small" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Enum.SupplierLevel.Medium" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Enum.SupplierLevel.Large" xml:space="preserve">
+    <value />
+  </data>
+  <data name="返回" xml:space="preserve">
+    <value />
+  </data>
+  <data name="岗位维护" xml:space="preserve">
+    <value>Job Maintenance</value>
+  </data>
+  <data name="用户选择示例" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TopNav" xml:space="preserve">
+    <value />
+  </data>
+  <data name="新增授权" xml:space="preserve">
+    <value>Add Authorization</value>
+  </data>
+  <data name="新增数据节点" xml:space="preserve">
+    <value>Add Data Node</value>
+  </data>
+  <data name="新增服务节点" xml:space="preserve">
+    <value>Add Sevice Node</value>
+  </data>
+  <data name="成果管理" xml:space="preserve">
+    <value />
+  </data>
+  <data name="编辑授权" xml:space="preserve">
+    <value>Edit Authorization</value>
+  </data>
+  <data name="参数设置" xml:space="preserve">
+    <value>Parameters Setting</value>
+  </data>
+  <data name="删除授权" xml:space="preserve">
+    <value>Delete Authorization</value>
+  </data>
+  <data name="删除数据节点" xml:space="preserve">
+    <value>Delete Data Node</value>
+  </data>
+  <data name="删除服务节点" xml:space="preserve">
+    <value>Delete Service Node</value>
+  </data>
+  <data name="编辑授权页面" xml:space="preserve">
+    <value>Edit Authorization Page</value>
+  </data>
+  <data name="数据授权" xml:space="preserve">
+    <value>Data Authorization</value>
+  </data>
+  <data name="数据授权页面" xml:space="preserve">
+    <value>Data Authorization Page</value>
+  </data>
+  <data name="重置密码" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+  <data name="服务授权" xml:space="preserve">
+    <value>Service Authorization</value>
+  </data>
+  <data name="服务授权页面" xml:space="preserve">
+    <value>Service Authorization Page</value>
+  </data>
+  <data name="服务管理" xml:space="preserve">
+    <value>Service Management</value>
+  </data>
+  <data name="客户组授权" xml:space="preserve">
+    <value>Customer Group Authorization</value>
+  </data>
+  <data name="数据节点" xml:space="preserve">
+    <value>Data Node</value>
+  </data>
+  <data name="服务节点" xml:space="preserve">
+    <value>Service Node</value>
+  </data>
+  <data name="Login_Success" xml:space="preserve">
+    <value>Login_Success</value>
+  </data>
+  <data name="Name_Required" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ParentId" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Abstract" xml:space="preserve">
+    <value>Abstract</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IconLocation" xml:space="preserve">
+    <value />
+  </data>
+  <data name="InUse" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SetTop" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ReadOnly" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Forbidden" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GeoBankRoot_Order" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Add_Property" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Delete_Property" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Property_Up" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Property_Down" xml:space="preserve">
+    <value />
+  </data>
+  <data name="PropertyName" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DefaultValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value />
+  </data>
+  <data name="DataSource_Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Property_Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="不经过服务器" xml:space="preserve">
+    <value />
+  </data>
+  <data name="批量导入" xml:space="preserve">
+    <value />
+  </data>
+  <data name="审核" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Enter_Keyword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Id" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Id" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.CreateTime" xml:space="preserve">
+    <value>CreateTime</value>
+  </data>
+  <data name="Empty.ArchiveModel.CreateTime" xml:space="preserve">
+    <value>CreateTime</value>
+  </data>
+  <data name="Column.ArchiveModel.Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Empty.ArchiveModel.Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Column.ArchiveModel.ProductType" xml:space="preserve">
+    <value>ProductType</value>
+  </data>
+  <data name="Empty.ArchiveModel.ProductType" xml:space="preserve">
+    <value>ProductType</value>
+  </data>
+  <data name="Column.ArchiveModel.Uploader" xml:space="preserve">
+    <value>Uploader</value>
+  </data>
+  <data name="Empty.ArchiveModel.Uploader" xml:space="preserve">
+    <value>Uploader</value>
+  </data>
+  <data name="Column.ArchiveModel.Author" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="Empty.ArchiveModel.Author" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="Column.ArchiveModel.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Empty.ArchiveModel.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Column.ArchiveModel.Authentic" xml:space="preserve">
+    <value>Authentic</value>
+  </data>
+  <data name="Empty.ArchiveModel.Authentic" xml:space="preserve">
+    <value>Authentic</value>
+  </data>
+  <data name="New_ArchiveModel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveModel.Id" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveModel.CreateTime" xml:space="preserve">
+    <value>CreateTime</value>
+  </data>
+  <data name="Label.ArchiveModel.Title" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="Label.ArchiveModel.ProductType" xml:space="preserve">
+    <value>ProductType</value>
+  </data>
+  <data name="Label.ArchiveModel.Uploader" xml:space="preserve">
+    <value>Uploader</value>
+  </data>
+  <data name="Label.ArchiveModel.Author" xml:space="preserve">
+    <value>Author</value>
+  </data>
+  <data name="Label.ArchiveModel.Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="Label.ArchiveModel.Authentic" xml:space="preserve">
+    <value>Authentic</value>
+  </data>
+  <data name="System_Login_ButtomImage" xml:space="preserve">
+    <value>System Login Buttom Image</value>
+  </data>
+  <data name="请提供授权ID" xml:space="preserve">
+    <value>Please Offer Authorization ID</value>
+  </data>
+  <data name="客户组名称" xml:space="preserve">
+    <value>Customer Group Name</value>
+  </data>
+  <data name="确定删除所选择的数据?" xml:space="preserve">
+    <value>Sure To Delete All Data You Choosed？</value>
+  </data>
+  <data name="是否删除所选条目？" xml:space="preserve">
+    <value>Sure To Delete All Items You Choosed？</value>
+  </data>
+  <data name="请先将光标定位在要删除的语种所在列。" xml:space="preserve">
+    <value>Please Move Your Mouse On One Language Column You Want To Delete</value>
+  </data>
+  <data name="是否删除" xml:space="preserve">
+    <value>Delete It Or Not？</value>
+  </data>
+  <data name="是否删除？" xml:space="preserve">
+    <value>Delete It Or Not？</value>
+  </data>
+  <data name="克隆" xml:space="preserve">
+    <value>Clone</value>
+  </data>
+  <data name="下拉" xml:space="preserve">
+    <value>Drag Down</value>
+  </data>
+  <data name="我的日程" xml:space="preserve">
+    <value>My Schedule</value>
+  </data>
+  <data name="System_Login_LogoUrl" xml:space="preserve">
+    <value>System Login Url Logo</value>
+  </data>
+  <data name="System_IconUrl" xml:space="preserve">
+    <value>System Url Icon</value>
+  </data>
+  <data name="用户设置保存成功！请刷新页面。" xml:space="preserve">
+    <value>Save Users Settings Successfully Please Refresh Page</value>
+  </data>
+  <data name="保存成功" xml:space="preserve">
+    <value>Save Successfully</value>
+  </data>
+  <data name="编辑页面" xml:space="preserve">
+    <value>Edit Page</value>
+  </data>
+  <data name="请选择一条信息!" xml:space="preserve">
+    <value>Please Select  Piece Of  Information</value>
+  </data>
+  <data name="请选择一行数据!" xml:space="preserve">
+    <value>Please Select A Line Of Data</value>
+  </data>
+  <data name="确定清空所有资源？" xml:space="preserve">
+    <value>Suer To Clean All The Resources？</value>
+  </data>
+  <data name="请输入语种简称(如zh-cn):" xml:space="preserve">
+    <value>Please Input The Abbreviation Of Language(eg:zh-cn)</value>
+  </data>
+  <data name="Plz_Enter_Keyword" xml:space="preserve">
+    <value>Please Enter Keyword</value>
+  </data>
+  <data name="确定重置选中用户的密码？" xml:space="preserve">
+    <value>Sure To Reset The Password You Choosed？</value>
+  </data>
+  <data name="控制器" xml:space="preserve">
+    <value>Controller</value>
+  </data>
+  <data name="方法" xml:space="preserve">
+    <value>Method</value>
+  </data>
+  <data name="时间" xml:space="preserve">
+    <value>Time</value>
+  </data>
+  <data name="耗时" xml:space="preserve">
+    <value>Time Consume</value>
+  </data>
+  <data name="请求" xml:space="preserve">
+    <value>Request</value>
+  </data>
+  <data name="信息" xml:space="preserve">
+    <value>Information</value>
+  </data>
+  <data name="请输入忘记密码的用户名" xml:space="preserve">
+    <value>Please Input The User Name of Forgetting Password</value>
+  </data>
+  <data name="need" xml:space="preserve">
+    <value>Need</value>
+  </data>
+  <data name="function" xml:space="preserve">
+    <value>Function</value>
+  </data>
+  <data name="name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="上级组织机构" xml:space="preserve">
+    <value>Parent Organization</value>
+  </data>
+  <data name="组织机构名称" xml:space="preserve">
+    <value>Parent Organization Name</value>
+  </data>
+  <data name="组织机构编码" xml:space="preserve">
+    <value>Organization Code</value>
+  </data>
+  <data name="机构类型" xml:space="preserve">
+    <value>Organization Type</value>
+  </data>
+  <data name="单位" xml:space="preserve">
+    <value>Company</value>
+  </data>
+  <data name="部门" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="排序" xml:space="preserve">
+    <value>Sorting</value>
+  </data>
+  <data name="状态" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="启用" xml:space="preserve">
+    <value>Enable</value>
+  </data>
+  <data name="禁用" xml:space="preserve">
+    <value>Disable</value>
+  </data>
+  <data name="备注" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="部门相关岗位" xml:space="preserve">
+    <value>Jobs Of This Department</value>
+  </data>
+  <data name="岗位名称" xml:space="preserve">
+    <value>Job Name</value>
+  </data>
+  <data name="岗位人数" xml:space="preserve">
+    <value>The Total Persons Of This Job</value>
+  </data>
+  <data name="岗位描述" xml:space="preserve">
+    <value>Job Description</value>
+  </data>
+  <data name="岗位责任" xml:space="preserve">
+    <value>Job Responsibility</value>
+  </data>
+  <data name="岗位要求" xml:space="preserve">
+    <value>Job Requirements</value>
+  </data>
+  <data name="部门相关人员" xml:space="preserve">
+    <value>Persons Of This Department</value>
+  </data>
+  <data name="用户名称" xml:space="preserve">
+    <value>User Type</value>
+  </data>
+  <data name="合同类型" xml:space="preserve">
+    <value>Contract Type</value>
+  </data>
+  <data name="合同期限(年)" xml:space="preserve">
+    <value>Contract Period</value>
+  </data>
+  <data name="是否主管" xml:space="preserve">
+    <value>Director Or Not</value>
+  </data>
+  <data name="是否主部门" xml:space="preserve">
+    <value>Main Department Or Not</value>
+  </data>
+  <data name="选择添加该部门用户" xml:space="preserve">
+    <value>Add User To This Department</value>
+  </data>
+  <data name="用户账号筛选" xml:space="preserve">
+    <value>Users Account Filter</value>
+  </data>
+  <data name="查询" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="刷新" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="加入部门" xml:space="preserve">
+    <value>Join The Department</value>
+  </data>
+  <data name="关闭" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="用户账号" xml:space="preserve">
+    <value>User Account</value>
+  </data>
+  <data name="当前所属主部门" xml:space="preserve">
+    <value>Current Main Department</value>
+  </data>
+  <data name="你所选择的岗位已经添加!" xml:space="preserve">
+    <value>Add The Job Successfully</value>
+  </data>
+  <data name="只允许输入英文或数字!" xml:space="preserve">
+    <value>Only Letter Or Number Allowed</value>
+  </data>
+  <data name="该用户已设置主部门" xml:space="preserve">
+    <value>This User Has Set The Main Department</value>
+  </data>
+  <data name="是否调整为当前所设置的部门" xml:space="preserve">
+    <value>Sure To Set Department As Main Department？</value>
+  </data>
+  <data name="是=以当前部门做主部门" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="否=不调整主部门" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="请选择一个组织机构!" xml:space="preserve">
+    <value>Please Select One Organization</value>
+  </data>
+  <data name="请先删该组织机构所对应的子节点!" xml:space="preserve">
+    <value>Please Delete The Child Nodes  Of This Organization</value>
+  </data>
+  <data name="确定删除所选择组织机构以及相关岗位人员信息?" xml:space="preserve">
+    <value>Sure To Delete The Information Of Organization And Persons</value>
+  </data>
+  <data name="岗位基础信息" xml:space="preserve">
+    <value>Base Information Of Job</value>
+  </data>
+  <data name="岗位信息" xml:space="preserve">
+    <value>Information Of Job</value>
+  </data>
+  <data name="部门人员" xml:space="preserve">
+    <value>Persons Of Department</value>
+  </data>
+  <data name="请先删除子节点!" xml:space="preserve">
+    <value>Please Delete Child Node First</value>
+  </data>
+  <data name="用户基本信息" xml:space="preserve">
+    <value>User Base Info</value>
+  </data>
+  <data name="开始导入" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Advanced Search" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Add Criteria" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Search Scheme" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Field" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AND/OR can not be the lower node of expression." xml:space="preserve">
+    <value />
+  </data>
+  <data name="Can't delete root node." xml:space="preserve">
+    <value />
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Compare Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Confirm delete checked nodes?" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Operator" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Plz select a node." xml:space="preserve">
+    <value />
+  </data>
+  <data name="Advanced" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Delete Criteria" xml:space="preserve">
+    <value />
+  </data>
+  <data name="FileManager" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SelectAll" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.UploadedDate" xml:space="preserve">
+    <value>UploadedDate</value>
+  </data>
+  <data name="Empty.ArchiveModel.UploadedDate" xml:space="preserve">
+    <value>UploadedDate</value>
+  </data>
+  <data name="Label.ArchiveModel.UploadedDate" xml:space="preserve">
+    <value>UploadedDate</value>
+  </data>
+  <data name="AlreadyRead" xml:space="preserve">
+    <value>Read</value>
+  </data>
+  <data name="ClearMessages" xml:space="preserve">
+    <value>Clear All</value>
+  </data>
+  <data name="Confirm_Clear_All_Messages" xml:space="preserve">
+    <value>Confirm clear all messages?</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="Message" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="Message_Manager" xml:space="preserve">
+    <value>Message Manager</value>
+  </data>
+  <data name="ReadAll" xml:space="preserve">
+    <value>Read All</value>
+  </data>
+  <data name="Cant_Delete_Child_Catalog" xml:space="preserve">
+    <value>Can't delete child catalog</value>
+  </data>
+  <data name="Confirm_Overwrite_Dup_Files" xml:space="preserve">
+    <value>Confirm overwrite duplcated files?</value>
+  </data>
+  <data name="Confrim_Delete_Caltalog_Contains_Files" xml:space="preserve">
+    <value>Confirm delete catalog contains files?</value>
+  </data>
+  <data name="ContentType" xml:space="preserve">
+    <value>Content Type</value>
+  </data>
+  <data name="Download_Completed" xml:space="preserve">
+    <value>Download Completed</value>
+  </data>
+  <data name="FileName" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="FileSize" xml:space="preserve">
+    <value>File Size</value>
+  </data>
+  <data name="Plz_Select_A_Catalog" xml:space="preserve">
+    <value>Plz select a catalog.</value>
+  </data>
+  <data name="Plz_Select_A_Catalog_To_Edit" xml:space="preserve">
+    <value>Plz select a catalog to edit.</value>
+  </data>
+  <data name="Plz_Select_A_Catalog_To_Upload" xml:space="preserve">
+    <value>Plz select a catalog to upload.</value>
+  </data>
+  <data name="SelectCatalog" xml:space="preserve">
+    <value>Select Catalog</value>
+  </data>
+  <data name="Select_A_File_To_Download" xml:space="preserve">
+    <value>Plz select a file to download.</value>
+  </data>
+  <data name="下载文件" xml:space="preserve">
+    <value>Download Files</value>
+  </data>
+  <data name="CatalogName" xml:space="preserve">
+    <value>Catalog Name</value>
+  </data>
+  <data name="Confrim_Delete" xml:space="preserve">
+    <value>Confirm delete?</value>
+  </data>
+  <data name="Plz_Enter_Catalog_Name" xml:space="preserve">
+    <value>Plz enter catalog name.</value>
+  </data>
+  <data name="Plz_Select_A_Record" xml:space="preserve">
+    <value>Plz select a record.</value>
+  </data>
+  <data name="级别" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="EditCatalog" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Keyword" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Passed" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Rejected" xml:space="preserve">
+    <value />
+  </data>
+  <data name="TobeModified" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Excel导入" xml:space="preserve">
+    <value />
+  </data>
+  <data name="GeoBank" xml:space="preserve">
+    <value />
+  </data>
+  <data name="成果统计" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Attachments" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Bo" xml:space="preserve">
+    <value />
+  </data>
+  <data name="成果树维护" xml:space="preserve">
+    <value />
+  </data>
+  <data name="模板下载" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Scope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Scope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveModel.Scope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveModel.AutoComplement" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.AutoComplement" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.AutoComplement" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveModel.Scope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveModel.Attachments" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.UploadTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.UploadTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Length" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Length" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveModel.BO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Type" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Type" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Modify" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Old" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Id" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Id" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.UploadedDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.UploadedDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.ProductType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.ProductType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Uploader" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Uploader" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Author" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Author" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Scope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Scope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Project" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Project" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Coverage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Coverage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Language" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Language" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Tool" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Tool" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.DcType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.DcType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.DcType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Id" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.UploadedDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.ProductType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Uploader" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Author" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Scope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Project" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Coverage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Language" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Query.ArchiveExtModel.Tool" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Project" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Project" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Coverage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Coverage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Language" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Language" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveModel.Tool" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveModel.Tool" xml:space="preserve">
+    <value />
+  </data>
+  <data name="New_ArchiveExtModel" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Id" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.UploadedDate" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Title" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.ProductType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Uploader" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Author" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Status" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Authentic" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Scope" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Project" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Coverage" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Language" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.Tool" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Label.ArchiveExtModel.DcType" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveExtModel.Attachments" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Name" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.UploadTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.UploadTime" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Length" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Length" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveExtModel.BO" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Value" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveExtModel.Theme" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveExtModel.Contributor" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveExtModel.Date" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Date" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Date" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveExtModel.Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Column.ArchiveExtModel.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Empty.ArchiveExtModel.Text" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Details.ArchiveExtModel.Subject" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Update_Success" xml:space="preserve">
+    <value />
+  </data>
+</root>

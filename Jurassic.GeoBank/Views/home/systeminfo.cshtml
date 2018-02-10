@@ -1,0 +1,26 @@
+﻿
+@{
+    Layout = null;
+    var functionCount = AppManager.Instance.FunctionManager.Count;
+    var usersCount = AppManager.Instance.UserManager.Count;
+    var rolesCount = AppManager.Instance.RoleManager.Count;
+}
+<style>
+    dl{
+        overflow:hidden;
+    }
+</style>
+<dl class="dl-horizontal">
+    <dt>.net版本：</dt>
+    <dd>@Environment.Version</dd>
+    <dt>框架版本：</dt>
+    <dd>@Jurassic.Com.FrameVersion.Version</dd>
+    <dt>公司：</dt>
+    <dd>@Jurassic.Com.FrameVersion.CompanyName</dd>
+    <dt>注册功能数：</dt>
+    <dd>@functionCount</dd>
+    <dt>角色数：</dt>
+    <dd>@rolesCount</dd>
+    <dt>用户数：</dt>
+    <dd>@usersCount</dd>
+</dl>

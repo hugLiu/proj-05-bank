@@ -1,0 +1,36 @@
+﻿@using Jurassic.AppCenter.Logs;
+    @{
+        Layout = null;
+        BaseController controller = this.ViewContext.Controller as BaseController;
+        //获取服务器名
+        var serverName = "http://" + Request.Url.Host;
+        //获取服务器IP
+        var serverIP = Request.ServerVariables.Get("Local_Addr").ToString();
+        //获取服务器操作系统版本
+        string serverSystem = controller.LogInfo.Platform;
+        //获取管理系统当前目录
+        var serverPath = Request.PhysicalApplicationPath;
+        //获取服务器IIS版本
+        var serverIIS = Request.ServerVariables["SERVER_SOFTWARE"].ToString();
+        //获取服务器当前时间
+        var serverDate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        //检测访问端口
+        var serverPort = Request.ServerVariables.Get("Server_Port").ToString();
+
+        var browser = controller.LogInfo.Browser + " " + controller.LogInfo.BrowserVersion;
+    }
+<dl class="dl-horizontal">
+    <dt>服务器名：</dt>
+    <dd>@serverName</dd>
+    <dt>服务器IP：</dt>
+    <dd>@serverIP</dd>
+    <dt>操作系统：</dt>
+    <dd>@serverSystem</dd>
+    <dt>Web服务器：</dt>
+    <dd>@serverIIS</dd>
+    <dt>浏览器：</dt>
+    <dd>@browser</dd>
+
+</dl>
+
+

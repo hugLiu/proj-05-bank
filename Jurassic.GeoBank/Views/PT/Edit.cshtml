@@ -1,0 +1,130 @@
+﻿@using Jurassic.WebQuery;
+@using Jurassic.WebGeoBank.Models;
+@model ArchiveModel
+@{
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+    ViewBag.ShowBreadCrumb = false;
+    //ViewBag.ShowToolBar = false;
+    ViewBag.ShowSearchBox = false;
+
+}
+@Html.AdvDataEdit()
+
+<input type="hidden" id="hdnIds" name="ids" />
+<script type="text/javascript">
+    mini.parse();
+    var form = new mini.Form("#DefaultForm");
+    mini.get('#tabs').setButtons(null);
+    var gridAttachment = mini.get("detailsgrid_Attachments");
+    gridAttachment.on("drawcell", function (e) {
+        if (e.field != 'Name') {
+            return;
+        }
+
+        //显示附件的下载链接
+        e.cellHtml = "<a href='" + '@Url.Content("~/F")'
+            + "/" + e.record.Id
+            + "/" + encodeURIComponent(e.record.Name)
+            + "' target='_blank'>" + e.value + "</a>";
+    });
+
+    function updateForm(data) {
+        if (!data) {
+            //没有数据时
+            resetEl();
+            form.setEnabled(false);
+            return;
+        }
+        form.reset();
+        $.advData.updateForm(data.model);
+        form.setEnabled(true);
+        if (data.differ && data.differ.length > 0) {
+            //显示多个元素属性
+            $('#hdnIds').val(data.ids);
+            signDiffer(data.differ);
+            mini.get('#tabs').hide();
+        }
+        else { // 只显示单个元素属性
+            resetEl();
+            mini.get('#tabs').show();
+        }
+    }
+
+    var multiObjEl = [];
+    function resetEl() {
+        $('#hdnIds').val('');
+        for (var i = 0; i < multiObjEl.length; i++) {
+            var el = multiObjEl[i];
+            var id = el.id;
+            delete el.id;
+            var element = mini.get(id);
+            element.set(el);
+            el.id = id;
+        }
+    }
+
+    function existsEl(id) {
+        for (var i = 0; i < multiObjEl.length; i++) {
+            var el = multiObjEl[i];
+            if (el.id == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function signDiffer(differ) {
+        for (var i = 0; i < differ.length; i++) {
+            var element = mini.get("master_" + differ[i]);
+
+            if (!existsEl(element.id)) {
+                //将控件原始属性缓存
+                var el = { id: element.id };
+                el.emptyText = element.emptyText;
+                el.required = element.required;
+                multiObjEl.push(el);
+            }
+
+            if (element.setEmptyText) {
+                element.setEmptyText('(多个)');
+            }
+            element.setValue(null);
+            if (element.setRequired) {
+                element.setRequired(false);
+            }
+            else { //将复选框置为中间态
+                var chk = element.getEl();
+                chk.indeterminate = true;
+            }
+        }
+    }
+
+    $('form').bind('afterSubmit', function (data) {
+        if (parent) {
+            parent.grid.reload();
+        }
+    });
+
+    @*//让成果类型下拉能用户自行输入值
+    var ptCombo = mini.get("master_ProductType");
+    ptCombo.set({
+        valueFromSelect: false
+    });
+
+    ptCombo.on("valuechanged", function (e) {
+        var v = ptCombo.getValue();
+        var data = ptCombo.getData();
+        var isNew = true;
+        for (var i in data) {
+            if (data[i].id == v) {
+                isNew = false;
+                break;
+            }
+        }
+        if (isNew && confirm("您输入了一个新的成果类型:'" + v + "'，需要保存到下拉列表吗？")) {
+            $.newPOST('@Url.Action("AddType")', { pt: v }, function () {
+                    ptCombo.setUrl(ptCombo.url);
+            });
+        }
+    });*@
+</script>

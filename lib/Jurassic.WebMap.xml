@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jurassic.WebMap</name>
+    </assembly>
+    <members>
+        <member name="T:Jurassic.WebMap.MapAddress">
+            <summary>
+            带地图信息的地址
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebMap.MapAddress.Longitude">
+            <summary>
+            起始点经度
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebMap.MapAddress.Latitude">
+            <summary>
+            起始点纬度
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebMap.MapAddress.TargetLongitude">
+            <summary>
+            目标点经度
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebMap.MapAddress.TargetLatitude">
+            <summary>
+            目标点纬度
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebMap.MapAddress.Address">
+            <summary>
+            文本地址
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebMap.MapAddress.Distance">
+            <summary>
+            离目标的距离
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebMap.MapExtensions.Map(System.Web.Mvc.HtmlHelper,Jurassic.WebMap.MapFormData)">
+            <summary>
+            创建一个地图控件
+            </summary>
+            <param name="htmlHelper">HTML帮助类</param>
+            <param name="formData">的配置对象</param>
+            <returns>Html结果以相关前台脚本</returns>
+        </member>
+        <member name="P:Jurassic.WebMap.MapFormData.AllowManualPoint">
+            <summary>
+            是否允许手工定位
+            </summary>
+        </member>
+    </members>
+</doc>

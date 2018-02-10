@@ -1,0 +1,3689 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jurassic.PKS.Service</name>
+    </assembly>
+    <members>
+        <member name="T:Jurassic.PKS.Service.Adapter.AdapterBase">
+            <summary>适配器基类</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.GetAdapterInfo">
+            <summary>适配器信息</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.GetAdapterInfoAsync">
+            <summary>获得适配器信息</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.Spider(System.String,System.String,Jurassic.PKS.Service.Pager)">
+            <summary>分批或增量爬取某个适配器域的成果的元数据集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="incrementValue">增量值，允许为空，如果有值必须是符合该域的增量类型的值</param>
+            <param name="pager">分页参数，允许为null，为null表示爬取全部，否则只爬取某页数据</param>
+            <returns>爬取结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.SpiderAsync(System.String,System.String,Jurassic.PKS.Service.Pager)">
+            <summary>分批或增量爬取某个适配器域的成果的元数据集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="incrementValue">增量值，允许为空，如果有值必须是符合该域的增量类型的值</param>
+            <param name="pager">分页参数，允许为null，为null表示爬取全部，否则只爬取某页数据</param>
+            <returns>爬取结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.Retrieve(System.String,System.String)">
+            <summary>根据域和成果键获取成果的内容项集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="natureKey">成果键</param>
+            <returns>成果的内容项集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.RetrieveAsync(System.String,System.String)">
+            <summary>根据域和成果键获取成果的内容项集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="natureKey">成果键</param>
+            <returns>成果的内容项集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.GetData(System.String,Jurassic.PKS.Service.Pager)">
+            <summary>根据数据项票据获取成果的数据项</summary>
+            <param name="ticket">成果的数据项票据</param>
+            <param name="pager">分页参数</param>
+            <returns>成果的数据项结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterBase.GetDataAsync(System.String,Jurassic.PKS.Service.Pager)">
+            <summary>根据数据项票据获取成果的数据项</summary>
+            <param name="ticket">成果的数据项票据</param>
+            <param name="pager">分页参数</param>
+            <returns>成果的数据项结果</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.AdapterWrapper">
+            <summary>适配器包装</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.#ctor(Jurassic.PKS.Service.Adapter.IAdapter)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.AdapterWrapper.Instance">
+            <summary>包装实例</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.GetAdapterInfo">
+            <summary>适配器信息</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.GetAdapterInfoAsync">
+            <summary>获得适配器信息</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.Spider(System.String,System.String,Jurassic.PKS.Service.Pager)">
+            <summary>分批或增量爬取某个适配器域的成果的元数据集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="incrementValue">增量值，允许为空，如果有值必须是符合该域的增量类型的值</param>
+            <param name="pager">分页参数，允许为null，为null表示爬取全部，否则只爬取某页数据</param>
+            <returns>爬取结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.SpiderAsync(System.String,System.String,Jurassic.PKS.Service.Pager)">
+            <summary>分批或增量爬取某个适配器域的成果的元数据集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="incrementValue">增量值，允许为空，如果有值必须是符合该域的增量类型的值</param>
+            <param name="pager">分页参数，允许为null，为null表示爬取全部，否则只爬取某页数据</param>
+            <returns>爬取结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.Retrieve(System.String,System.String)">
+            <summary>根据域和成果键获取成果的内容项集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="natureKey">成果键</param>
+            <returns>成果的内容项集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.RetrieveAsync(System.String,System.String)">
+            <summary>根据域和成果键获取成果的内容项集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="natureKey">成果键</param>
+            <returns>成果的内容项集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.GetData(System.String,Jurassic.PKS.Service.Pager)">
+            <summary>根据数据项票据获取成果的数据项</summary>
+            <param name="ticket">成果的数据项票据</param>
+            <param name="pager">分页参数</param>
+            <returns>成果的数据项结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterWrapper.GetDataAsync(System.String,Jurassic.PKS.Service.Pager)">
+            <summary>根据数据项票据获取成果的数据项</summary>
+            <param name="ticket">成果的数据项票据</param>
+            <param name="pager">分页参数</param>
+            <returns>成果的数据项结果</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.AdapterExceptionCode">
+            <summary>适配器异常代码</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Adapter.AdapterExceptionCode.AdapterScopeNotExist">
+            <summary>适配器域不存在</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Adapter.AdapterExceptionCode.InvalidTicket">
+            <summary>无效的票据</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Adapter.AdapterExceptionCode.InvalidIncrementValue">
+            <summary>无效的增量值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Adapter.AdapterExceptionCode.InvalidDataFormat">
+            <summary>无效的数据格式</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Adapter.AdapterExceptionCode.DataNotExist">
+            <summary>数据不存在</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.IAdapter">
+            <summary>适配器接口</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.IAdapter.GetAdapterInfo">
+            <summary>获得适配器信息</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.IAdapter.GetAdapterInfoAsync">
+            <summary>获得适配器信息</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.IAdapter.Spider(System.String,System.String,Jurassic.PKS.Service.Pager)">
+            <summary>分批或增量爬取某个适配器域的成果的元数据集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="incrementValue">增量值，允许为空，如果有值必须是符合该域的增量类型的值</param>
+            <param name="pager">分页参数，允许为null，为null表示爬取全部，否则只爬取某页数据</param>
+            <returns>爬取结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.IAdapter.SpiderAsync(System.String,System.String,Jurassic.PKS.Service.Pager)">
+            <summary>分批或增量爬取某个适配器域的成果的元数据集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="incrementValue">增量值，允许为空，如果有值必须是符合该域的增量类型的值</param>
+            <param name="pager">分页参数，允许为null，为null表示爬取全部，否则只爬取某页数据</param>
+            <returns>爬取结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.IAdapter.Retrieve(System.String,System.String)">
+            <summary>根据域和成果键获取成果的内容项集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="natureKey">成果键</param>
+            <returns>成果的内容项集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.IAdapter.RetrieveAsync(System.String,System.String)">
+            <summary>根据域和成果键获取成果的内容项集合</summary>
+            <param name="scope">某个适配器域</param>
+            <param name="natureKey">成果键</param>
+            <returns>成果的内容项集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.IAdapter.GetData(System.String,Jurassic.PKS.Service.Pager)">
+            <summary>根据数据项票据获取成果的数据项</summary>
+            <param name="ticket">成果的数据项票据</param>
+            <param name="pager">分页参数</param>
+            <returns>成果的数据项结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.IAdapter.GetDataAsync(System.String,Jurassic.PKS.Service.Pager)">
+            <summary>根据数据项票据获取成果的数据项</summary>
+            <param name="ticket">成果的数据项票据</param>
+            <param name="pager">分页参数</param>
+            <returns>成果的数据项结果</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.AdapterInfo">
+            <summary>适配器信息</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.AdapterInfo.Id">
+            <summary>ID</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.AdapterInfo.DataSourceName">
+            <summary>数据源名称</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.AdapterInfo.DataSourceType">
+            <summary>数据源类型</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.AdapterInfo.Scopes">
+            <summary>域集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.AdapterInfo.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.DataResult">
+            <summary>成果的数据项</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.DataResult.Format">
+            <summary>数据格式</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.DataResult.Value">
+            <summary>
+            返回的数据内容，
+            如果<c>Format</c>为<c>DataFormat.DOC</c>、<c>DataFormat.DOCX</c>
+            、<c>DataFormat.PPT</c>、<c>DataFormat.PPTX</c>、<c>DataFormat.XLS</c>
+            、<c>DataFormat.XLSX</c>、<c>DataFormat.PNG</c>、
+            、<c>DataFormat.JPG</c>、<c>DataFormat.BMP</c>、<c>DataFormat.TIF</c>
+            、<c>DataFormat.GDB</c>，返回值应该为<c>System.IO.Stream</c>;
+            其它的为<c>System.String</c>，注意：字符串应为utf-8编码
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.DataResult.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.DataSchema">
+            <summary>成果的内容项</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.DataSchema.Name">
+            <summary>名称</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.DataSchema.Ticket">
+            <summary>票据</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.DataSchema.Major">
+            <summary>是否主成果</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.DataSchema.Format">
+            <summary>格式</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.DataSchema.Total">
+            <summary>总数，-1表示总数未知</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.DataSchema.Unit">
+            <summary>单位</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.DataSchema.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.DataSchemaCollection">
+            <summary>成果的内容项集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.DataSchemaCollection.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.DataSchemaCollection.#ctor(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.Adapter.DataSchema})">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.DataSchemaCollection.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.IncrementType">
+            <summary>增量类型</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Adapter.IncrementType.None">
+            <summary>无</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Adapter.IncrementType.ID">
+            <summary>ID</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Adapter.IncrementType.Date">
+            <summary>日期</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.Scope">
+            <summary>域信息</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.Scope.Name">
+            <summary>名称</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.Scope.IncrementType">
+            <summary>增量类型</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.Scope.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.ScopeCollection">
+            <summary>适配器域集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.ScopeCollection.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.ScopeCollection.#ctor(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.Adapter.Scope})">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.ScopeCollection.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Adapter.SpiderResult">
+            <summary>成果的元数据集合爬取结果</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.SpiderResult.Total">
+            <summary>总数</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.SpiderResult.MaxValue">
+            <summary>最大值，用于增量爬取</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Adapter.SpiderResult.Metadatas">
+            <summary>元数据集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Adapter.SpiderResult.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.AppDomainCollection">
+             <summary>
+            所有的对象类型对应的应用场景集合
+             </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.AppDomain">
+            <summary>
+            应用场景
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.AppDomain.BOT">
+            <summary>
+            对象类型
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.AppDomain.Appdomain">
+            <summary>
+            应用域集合
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.AliasCollection">
+            <summary>
+            别名集合
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.BO">
+            <summary>
+            业务对象对象
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.BO.BOID">
+            <summary>
+            业务对象ID
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.BO.Name">
+            <summary>
+            业务对象正式名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.BO.BOT">
+            <summary>
+            业务对象类型
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.BOCollection">
+            <summary>
+            对象集合
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.GF.BORelation.Space">
+            <summary>
+            空间坐标关系
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.GF.BORelation.F">
+            <summary>
+            管理关系：下分
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.BOTreeNodeTemplate">
+            <summary>
+            对象树节点模板
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.BOTreeNodeTemplate.BOT">
+            <summary>
+            对象类型
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.BOTreeNodeTemplate.BOs">
+            <summary>
+            业务对象数组 ，null为该类型下所有对象
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.BOTreeNodeTemplate.Relation">
+            <summary>
+            父与子之间的空间关系和管理关系,null为空间拓扑关系
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.BOTreeNodeTemplate.Filter">
+            <summary>
+            当前节点的过滤条件
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.BOTreeNodeTemplate.Children">
+            <summary>
+            子节点模板数组定义
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FeatureFilter.FT">
+            <summary>
+            特征类型
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FeatureFilter.BOs">
+            <summary>
+            业务对象集合
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FeatureFilter.BBox">
+            <summary>
+            符合WKT的格式空间范围
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FeatureFilter.Filter">
+            <summary>
+            符合filter规范的json字符串
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FeatureFilter.CRS">
+            <summary>
+            期望返回数据的坐标系统
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FeatureParameter.Name">
+            <summary>
+            查询参数名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FeatureParameter.DataType">
+            <summary>
+            查询参数数据类型取值范围string|decimal|date
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.FT">
+            <summary>
+            特征类型名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FT.Name">
+            <summary>
+            特征类型名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FT.NSs">
+            <summary>
+            应用主题
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.FTC">
+            <summary>
+            特征类型类别取值范围：平面|单井|剖面|图表
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FTC.Name">
+            <summary>
+            类别名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.FTC.FTs">
+            <summary>
+            所支持特征类型集合
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.FTC.#ctor(System.String)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.IBO">
+            <summary>
+            业务对象服务接口定义
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetBOByName(System.String,System.String)">
+            <summary>
+            根据业务对象正式名或别名以及业务对象类型获取正式业务实体信息
+            </summary>
+            <param name="name">业务对象正式名或别名</param>
+            <param name="bot">业务对象类型</param>
+            <returns>如果找到，返回<c>BO</c>对象，否则返回<c>null</c></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetBOById(System.String)">
+            <summary>
+            根据业务对象Id获取正式业务实体信息
+            </summary>
+            <param name="boid">业务对象Id</param>
+            <returns>如果找到，返回<c>BO</c>对象，否则返回<c>null</c></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetBOByAlias(System.String,System.String)">
+            <summary>
+            根据业务对象别名和应用域获取正式业务对象信息
+            </summary>
+            <param name="alias">业务对象别名</param>
+            <param name="appdomain">业务域</param>
+            <returns>如果找到，返回<c>BO</c>对象，否则返回<c>null</c></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetBOAliasByID(System.String,System.String[])">
+            <summary>
+            根据业务对象ID获取业务对象别名
+            </summary>
+            <param name="boid">业务对象ID</param>
+            <param name="appdomains">应用域列表。如果为<c>null</c>，返回所有可能的应用域别名</param>
+            <returns>别名列表，<c>Alias</c>集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.Get3GXById(System.String,Jurassic.PKS.Service.GF.GGGXDataCategory)">
+            <summary>
+            根据业务对象ID和数据分类获取3GX数据
+            </summary>
+            <param name="boid">业务对象ID</param>
+            <param name="category"><c>GGGXDataCategory</c>对象，要返回的数据类别</param>
+            <returns><c>XmlDocument</c>的一个实例，该实例符合3GX数据规范</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetNearBOById(System.String,System.Decimal,System.String,System.String)">
+            <summary>
+            获取指定对象附近的临近对象
+            </summary>
+            <param name="boid">指定业务对象ID</param>
+            <param name="distince">临近半径范围，单位为米</param>
+            <param name="bot">临近业务对象类型</param>
+            <param name="filter">符合filter规范的json字符串</param>
+            <returns><c>NearBOCollection</c>实例</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetNearBOByLocation(System.String,System.Decimal,System.String,System.String)">
+            <summary>
+            获取指定点坐标附近的临近对象
+            </summary>
+            <param name="pointWKT">指定符合Point定义的WKT格式坐标</param>
+            <param name="distince">临近半径范围，单位为米</param>
+            <param name="bot">临近业务对象类型</param>
+            <param name="filter">符合filter规范的json字符串</param>
+            <returns><c>NearBOCollection</c>实例</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetNearBOByName(System.String,System.String,System.Decimal,System.String,System.String)">
+            <summary>
+            获取指定业务对象名称/类型附近的临近对象
+            </summary>
+            <param name="boName">指定业务对象名称（包括正式名和别名）</param>
+            <param name="boType">指定业务对象类型</param>
+            <param name="bot">临近业务对象类型</param>
+            <param name="filter">符合filter规范的json字符串</param>
+            <returns><c>NearBOCollection</c>实例</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetBOListByType(System.String,System.String)">
+            <summary>
+            获取指定业务对象类型/类别的业务对象
+            </summary>
+            <param name="bot">返回的业务对象类型</param>
+            <param name="filter">符合filter规范的json字符串</param>
+            <returns>业务对象集合<c>BOCollection</c></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetBOListByFilter(System.String,System.String,System.String)">
+            <summary>
+            获取指定业务对象类型和符合属性过滤条件的业务对象
+            </summary>
+            <param name="bot">返回的业务对象类型</param>
+            <param name="wktBBox">符合WKT的格式空间范围</param>
+            <param name="filter">符合filter规范的json字符串</param>
+            <returns>业务对象集合<c>BOCollection</c></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetBOTree(Jurassic.PKS.Service.GF.BOTreeTemplate)">
+            <summary>
+            根据业务对象树模板获取业务对象列表
+            </summary>
+            <param name="template">树模板<c>BOTreeTemplate</c></param>
+            <returns>业务对象集合<c>BOCollection</c></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetCCTermOfBO">
+            <summary>
+            获取BO的叙词分类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetPropertySchema(System.String,System.String,System.Collections.Generic.List{Jurassic.PKS.Service.Interfaces.GF.PropertyName})">
+            <summary>
+            根据业务对象类型和应用域获取属性定义信息
+            </summary>
+            <param name="bot">业务对象类型</param>
+            <param name="appDomain">应用域</param>
+            <param name="names">属性名称集合</param>
+            <returns>返回属性定义集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetDbInfo">
+            <summary>
+            获得数据库信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.GetAppDomains">
+            <summary>
+            获得所有的应用场景集合
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IBO.Get3GXByFilter(System.String,System.Collections.Generic.List{System.String},System.String,Jurassic.PKS.Service.GF.GGGXDataCategory)">
+            <summary>
+            根据filter获得3GX数据
+            </summary>
+            <param name="bot">查询对象类型</param>
+            <param name="bos">查询对象数组</param>
+            <param name="filter">查询过滤条件（针对feature的）</param>
+            <param name="category">3GX组成数据的分类标记 G:空间坐标数据 P:对象属性数据 B:以上两者</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.IGGGX">
+            <summary>
+            3GX服务接口
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IGGGX.GetFTCList">
+            <summary>
+            获取3GX服务能处理的数据类型及其参数配置
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IGGGX.GetBOTList">
+            <summary>
+            获取3GX服务能处理的业务对象类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IGGGX.GetFeatures(Jurassic.PKS.Service.GF.FeatureFilter)">
+            <summary>
+            根据过滤条件获取3GX属性信息
+            </summary>
+            <param name="filter"></param>
+            <returns><c>XmlDocument</c>的一个实例，该实例符合3GX数据规范</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IGGGX.GetDomain(System.String,System.String)">
+            <summary>
+            获取业务对象属性枚举值
+            </summary>
+            <param name="ft"></param>
+            <param name="parameter">NS.参数名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.IGGGX.GetAllBOT">
+            <summary>
+            获得所有支持的业务对象类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.NearBO">
+            <summary>
+            临近的业务对象
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.NearBO.SpaceLocation">
+            <summary>
+            临近BO的空间坐标，WKT格式。
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.NearBO.Distince">
+            <summary>
+            临近BO离指定BO的距离（米）
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.NS.Name">
+            <summary>
+            应用主题名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.NS.Parameters">
+            <summary>
+            特征类型所支持的查询参数集合对于图表（目前对应专题图）来说，Param中除了查询参数外还必须包括专题数据项（比如油、气、水产量）
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.SubmissionError">
+            <summary>
+            提交错误信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.SubmissionError.BOName">
+            <summary>
+            对象名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.SubmissionError.Error">
+            <summary>
+            错误信息
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.SubmissionInfo">
+            <summary>
+            提交信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.SubmissionInfo.GGGXData">
+            <summary>
+            3GX数据（XML字符串）
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.SubmissionInfo.Option">
+            <summary>
+            Override|Unchange 参考3GX数据导入流程图
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.SubmissionResult">
+            <summary>
+            提交结果
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GF.SubmissionResult.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.TermBO.Alias">
+            <summary>
+            BO别名集合
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.GF.TreeBO">
+            <summary>
+            对象树
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GF.TreeBO.ParentBOID">
+            <summary>
+            对象父ID
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Interfaces.GF.DbInfo">
+            <summary>
+            数据库信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Interfaces.GF.DbInfo.CRS">
+            <summary>数据库部署名称</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Interfaces.GF.DbInfo.CSParam">
+            <summary>坐标参照系统</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Interfaces.GF.DbInfo.DBSerName">
+            <summary>坐标系统参数</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Interfaces.GF.PropertyName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Interfaces.GF.PropertyName.Name">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Interfaces.GF.PropertyName.ValueType">
+            <summary>
+            属性值类型
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Interfaces.GF.PropertySchema">
+            <summary>
+            属性定义
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Interfaces.GF.PropertySchema.Name">
+            <summary>
+            属性名
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Interfaces.GF.PropertySchema.DataType">
+            <summary>
+            属性的数据类型
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Interfaces.GF.PropertySchema.Values">
+            <summary>
+            属性可能值
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Interfaces.GF.ValueTypes">
+            <summary>
+            属性值类型
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Interfaces.GF.ValueTypes.Enum">
+            <summary> 可能值 </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Interfaces.GF.ValueTypes.Fact">
+            <summary> 实际值 </summary> 
+        </member>
+        <member name="F:Jurassic.PKS.Service.Interfaces.GF.ValueTypes.All">
+            <summary> 可能值+实际值 </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Interfaces.GF.ValueTypes.None">
+            <summary> 不返回值 </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.PropertySetCollection">
+            <summary>
+            属性集 集合
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.PropertySetCollection.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转xml
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.PropertySetCollection.GetObject(System.Xml.XmlNode)">
+            <summary>
+            xml转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.PropertySetCollection.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.ShapeCollection">
+            <summary>
+            形状集合
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ShapeCollection.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转xml
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ShapeCollection.GetObject(System.Xml.XmlNode)">
+            <summary>
+            xml转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.ShapeCollection.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.ServiceInfo">
+            <summary>
+            服务信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.ServiceInfo.Name">
+            <summary>名称</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.ServiceInfo.Description">
+            <summary>描述</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.ServiceInfo.Developer">
+            <summary>开发者</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Data.DataExceptionCode">
+            <summary>数据服务异常代码</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Data.DataExceptionCode.AdapterNotExist">
+            <summary>适配器不存在</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Data.DataExceptionCode.AdapterScopeNotExist">
+            <summary>适配器域不存在</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Data.DataExceptionCode.InvalidUrlFormat">
+            <summary>无效的URL格式</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Data.DataExceptionCode.InvalidDataFormat">
+            <summary>无效的数据格式</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Data.AdapterInfoCollection">
+            <summary>适配器信息集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.AdapterInfoCollection.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.AdapterInfoCollection.#ctor(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.Adapter.AdapterInfo})">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.AdapterInfoCollection.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Data.IData">
+            <summary>数据组件接口</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.IData.GetAdapterInfos">
+            <summary>获得已注册的适配器信息集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.IData.GetAdapterInfosAsync">
+            <summary>获得已注册的适配器信息集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.IData.Spider(System.String,System.String,Jurassic.PKS.Service.Pager,System.String)">
+            <summary>分批或增量爬取某个适配器的某个域的成果的元数据集合</summary>
+            <param name="adapterId">适配器ID</param>
+            <param name="scope">适配器的某个域</param>
+            <param name="incrementValue">增量值，允许为空，如果有值必须是符合该域的增量类型的值</param>
+            <param name="pager">分页参数，允许为null，为null表示爬取全部，否则只爬取某页数据</param>
+            <returns>爬取结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.IData.SpiderAsync(System.String,System.String,Jurassic.PKS.Service.Pager,System.String)">
+            <summary>分批或增量爬取某个适配器的某个域的成果的元数据集合</summary>
+            <param name="adapterId">适配器ID</param>
+            <param name="scope">适配器的某个域</param>
+            <param name="incrementValue">增量值，允许为空，如果有值必须是符合该域的增量类型的值</param>
+            <param name="pager">分页参数，允许为null，为null表示爬取全部，否则只爬取某页数据</param>
+            <returns>爬取结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.IData.Retrieve(System.String)">
+            <summary>根据url获取成果的内容项集合</summary>
+            <param name="url">适配器URL</param>
+            <returns>成果的内容项集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.IData.RetrieveAsync(System.String)">
+            <summary>根据url获取成果的内容项集合</summary>
+            <param name="url">适配器URL</param>
+            <returns>成果的内容项集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.IData.GetData(System.String,System.String,Jurassic.PKS.Service.Pager)">
+            <summary>根据url和ticket获取成果的数据项</summary>
+            <param name="url">适配器URL</param>
+            <param name="ticket">成果的数据项票据</param>
+            <param name="pager">分页参数</param>
+            <returns>成果的数据项结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Data.IData.GetDataAsync(System.String,System.String,Jurassic.PKS.Service.Pager)">
+            <summary>根据url和ticket获取成果的数据项</summary>
+            <param name="url">适配器URL</param>
+            <param name="ticket">成果的数据项票据</param>
+            <param name="pager">分页参数</param>
+            <returns>成果的数据项结果</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Index.IndexExceptionCodes">
+            <summary>索引服务异常代码</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Index.IndexExceptionCodes.SavingIndexFailed">
+            <summary>保存索引失败</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Index.IndexExceptionCodes.UpdatingIndexFailed">
+            <summary>更新索引失败</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Index.IndexExceptionCodes.DeletingIndexFailed">
+            <summary>删除索引失败</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Index.IIndexer">
+            <summary>索引服务接口</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Index.IIndexer.SendIndex(Jurassic.PKS.Service.Index.IndexInfo)">
+            <summary>批量保存/更新/删除索引信息</summary>
+            <param name="indexInfo">索引操作信息</param>
+            <returns>索引操作结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Index.IIndexer.SendIndexAsync(Jurassic.PKS.Service.Index.IndexInfo)">
+            <summary>批量保存/更新/删除索引信息</summary>
+            <param name="indexInfo">索引操作信息</param>
+            <returns>索引操作结果</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Index.IndexAction">
+            <summary>索引操作</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Index.IndexAction.Save">
+            <summary>保存</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Index.IndexAction.Update">
+            <summary>更新</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Index.IndexAction.Delete">
+            <summary>删除</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Index.IndexInfo">
+            <summary>索引操作信息</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Index.IndexInfo.Metadatas">
+            <summary>元数据集合</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Index.IndexInfoBase">
+            <summary>索引操作信息基类</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Index.IndexInfoBase.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Index.IndexInfoBase.Action">
+            <summary>操作</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Index.IndexInfoBase.IndexQuality">
+            <summary>索引质量,默认值为"100%"</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Index.IndexInfoBase.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Index.IndexResult">
+            <summary>索引操作结果</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Index.IndexResult.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Index.IndexResult.IIIds">
+            <summary>元数据ID集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Index.IndexResult.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.SearchExceptionCodes">
+            <summary>搜索服务异常代码</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Search.SearchExceptionCodes.DataConvertFaild">
+            <summary>数据转化失败</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Search.SearchExceptionCodes.InvalidEsRequest">
+            <summary>ES请求参数不合法 </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Search.SearchExceptionCodes.EsProcessFaild">
+            <summary> ES处理请求异常 </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Search.SearchExceptionCodes.MongoProcessFaild">
+            <summary> Mongo处理请求异常 </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.FieldCollection">
+            <summary>
+            字段投影
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.GroupCollection">
+            <summary>
+            聚合结果
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.GroupRule">
+            <summary>
+            聚合条件
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.IQuery">
+            <summary>
+            MongoDB查询接口
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.IQuery.MatchAsync(Jurassic.PKS.Service.Search.MatchCondition)">
+            <summary>
+            查询数据实体元数据
+            </summary>
+            <param name="request">查询请求条件</param>
+            <returns>返回匹配结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.IQuery.Match(Jurassic.PKS.Service.Search.MatchCondition)">
+            <summary>
+            查询数据实体元数据
+            </summary>
+            <param name="request">查询请求条件</param>
+            <returns>返回匹配结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.IQuery.GetMetadataDefinitionAsync(System.String[])">
+            <summary>
+            根据给定的标签，返回所有包含该标签的标签
+            </summary>
+            <param name="tagnames">标签名称（支持通配）</param>
+            <returns>返回匹配标签本身信息</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.IQuery.GetMetadataDefinition(System.String[])">
+            <summary>
+            根据给定的标签，返回所有包含该标签的标签
+            </summary>
+            <param name="tagnames">标签名称（支持通配）</param>
+            <returns>返回匹配标签本身信息</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.IQuery.StatisticsAsync">
+            <summary>
+            获取元数据统计信息
+            </summary>
+            <returns>返回统计信息</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.IQuery.Statistics">
+            <summary>
+            获取元数据统计信息
+            </summary>
+            <returns>返回统计信息</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.ISearch">
+            <summary>
+            ElasticSearch查询接口
+            </summary>
+            ES version 5.0.0
+            Elasticsearch.Net  version 2.4.6
+            Nest version 2.4.6
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.ISearch.SearchAsync(Jurassic.PKS.Service.Search.SearchCondition)">
+            <summary>
+            查询数据实体元数据
+            </summary>
+            <param name="condition">查询条件</param>
+            <returns>返回查询匹配结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.ISearch.Search(Jurassic.PKS.Service.Search.SearchCondition)">
+            <summary>
+            查询数据实体元数据
+            </summary>
+            <param name="condition">查询条件</param>
+            <returns>返回查询匹配结果</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.MatchCondition">
+            <summary>
+            Mongo查询匹配条件
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.MatchCondition.Filter">
+            <summary>
+            过滤条件(自定义条件表达式类型)
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.MatchCondition.GroupRule">
+            <summary>
+            聚合条件
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.MatchRequest">
+            <summary>
+            Mongo查询匹配条件 （for api）
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.MatchRequest.Filter">
+            <summary>
+            过滤条件(object类型)
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.MatchRequest.GroupRule">
+            <summary>
+            聚合条件
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.QueryConditionBase">
+            <summary>
+            查询条件基础
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.QueryConditionBase.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.QueryConditionBase.Fields">
+            <summary>
+            字段投影
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.QueryConditionBase.SortRules">
+            <summary>
+            排序规则
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.QueryConditionBase.Pager">
+             <summary>
+            分页参数
+             </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.QueryResult">
+            <summary>
+            查询匹配结果
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.QueryResult.Count">
+            <summary>
+            匹配的总记录条数
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.QueryResult.Metadatas">
+            <summary>
+            匹配文档信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.QueryResult.Groups">
+            <summary>
+            聚合结果
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.QueryResult.ToString">
+            <summary>
+            转化为字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.QueryResult.ToMetaData">
+            <summary>
+            QueryResult转化为Metadata
+            </summary>
+            <returns>返回metadatas的第一个值</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.RankCollection">
+            <summary>
+            提升规则
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.SearchCondition">
+            <summary>
+            ES查询条件
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.SearchCondition.Filter">
+            <summary>
+            过滤条件(自定义条件表达式类型)
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.SearchCondition.Sentence">
+            <summary>
+            输入短语
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.SearchCondition.Ranks">
+            <summary>
+            提升规则
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.SearchRequest">
+            <summary>
+            ES查询条件 （for api）
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.SearchRequest.Sentence">
+            <summary>
+            输入短语
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.SearchRequest.Ranks">
+            <summary>
+            提升规则
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.SearchRequest.GroupRule">
+            <summary>
+            聚合条件
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.SortRuleCollection">
+            <summary>
+            排序规则集合
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.Sort">
+            <summary>
+            单个排序规则
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.Sort.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.Sort.#ctor(System.Int32)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="direction"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Search.Sort.#ctor(System.Int32,System.Collections.Generic.List{System.String})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="direction"></param>
+            <param name="promotion"></param>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.Sort.Direction">
+            <summary>
+            排序方向
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Search.Sort.Promotion">
+            <summary>
+            排序自定义值
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Search.StatisticsInfo">
+            <summary>
+            统计信息
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.ConceptClass">
+             <summary>
+            概念类信息
+             </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.ConceptClass.CCCode">
+            <summary>
+            概念类编码
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.ConceptClass.CC">
+            <summary>
+            概念类名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.ConceptClass.Tag">
+            <summary>
+            概念类标签
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.ConceptClass.Type">
+            <summary>
+            概念类类型
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.ISemantics">
+            <summary>
+            语义服务接口
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.ISemantics.Segment(System.String,Jurassic.PKS.Service.Semantics.SegmentOption)">
+            <summary>
+            简单语义分词
+            </summary>
+            <param name="sentence">分词短语</param>
+            <param name="option">分词方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.ISemantics.GetTermInfo(System.Collections.Generic.List{System.String},System.String)">
+             <summary>
+            根据叙词名称获得指定概念类的叙词信息
+             </summary>
+             <param name="term">正式叙词</param>
+             <param name="cc">概念类</param>
+            <returns>叙词的详细信息</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.ISemantics.GetTranslationById(System.String,System.String,System.Boolean)">
+            <summary>
+            根据叙词id获取指定语言的翻译词
+            </summary>
+            <param name="id">叙词id</param>
+            <param name="langcode">语言类型</param>
+            <param name="onlymain">只包含主词</param>
+            <returns>翻译词列表</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.ISemantics.Hierarchy(System.String,System.String,System.Int32)">
+            <summary>
+            获得树的层级结构
+            </summary>
+            <param name="id">叙词ID</param>
+            <param name="cc">指定关系叙词的概念类</param>
+            <param name="deeplevel">返回树的层级</param>
+            <returns>树结构结果</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.ISemantics.GetCC">
+            <summary>
+            获取 所有的概念类
+            </summary>
+            <returns>返回概念类表信息</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.ISemantics.GetSemanticsType">
+            <summary>
+            获取语义关系类型（2017新增）
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.ISemantics.Semantics(System.String,System.String,System.String)">
+            <summary>
+            获取 语义关系
+            </summary>
+            <param name="term">叙词</param>
+            <param name="sr">指定语义关系</param>
+            <param name="direction">语义关系方向</param>
+            <returns>返回关联概念类的列表</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.ISemantics.GetDictionary(System.Collections.Generic.List{System.String})">
+            <summary>
+            获得指定类型词库
+            </summary>
+            <param name="cc">字典类型</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.KeyWord">
+            <summary>
+            预处理返回结果
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.KeyWord.#ctor">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.KeyWord.Term">
+            <summary>
+            叙词
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.KeyWord.Cc">
+            <summary>
+            概念类
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.KeyWord.Translates">
+            <summary>
+            翻译词
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.KeyWord.Aliases">
+            <summary>
+            同义词
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.SemanticsExceptionCode">
+            <summary>
+            语义服务异常代码
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Semantics.SemanticsExceptionCode.MissingParameterValue">
+            <summary>缺请求参数</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Semantics.SemanticsExceptionCode.OperationProcessingFailed">
+            <summary>不可预期的异常</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Semantics.SemanticsExceptionCode.InvalidEnumValue">
+            <summary>无效的枚举值</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.SemanticsType">
+            <summary>
+            语义关系类型
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SemanticsType.SR">
+            <summary>
+            语义关系类型
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SemanticsType.CCCode1">
+            <summary>
+            概念类编码1
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SemanticsType.CCCode2">
+             <summary>
+            概念类编码2
+             </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SemanticsType.Description">
+            <summary>
+            语义关系类型描述
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SemanticsType.Remark">
+            <summary>
+            备注信息
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.SegmentOption">
+            <summary>
+            分词条件
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SegmentOption.Cc">
+            <summary>词库名称</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SegmentOption.IncludeTrans">
+            <summary>是否包含翻译词列表</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SegmentOption.IncludeAlias">
+            <summary>是否包含同义词列表</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.SegmentOption.MatchRule">
+            <summary>匹配规则</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.TermInfo">
+            <summary>
+            叙词信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TermInfo.TermClassID">
+            <summary>
+            叙词ID
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TermInfo.CCCode">
+            <summary>
+            概念类编码
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TermInfo.Term">
+            <summary>
+            叙词名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TermInfo.PathTerm">
+            <summary>
+            叙词路径
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TermInfo.Source">
+            <summary>
+            叙词来源
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TermInfo.Description">
+            <summary>
+            叙词描述
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TermInfo.Remark">
+            <summary>
+            备注信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TermInfo.CC">
+            <summary>
+            叙词所属概念类
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.TreeResult">
+            <summary>
+            树结构
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.TreeResult.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TreeResult.TreeItems">
+            <summary>
+            树节点集合
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.TreeResult.AddRange(System.Collections.Generic.IList{Jurassic.PKS.Service.Semantics.TreeItem})">
+            <summary>
+            树添加多个节点
+            </summary>
+            <param name="collection"></param>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Semantics.TreeItem">
+            <summary>
+            树节点定义
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.TreeItem.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.TreeItem.#ctor(System.String,System.String,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="id">节点id</param>
+            <param name="pathTerm">叙词路径</param>
+            <param name="term">叙词名称</param>
+            <param name="orderIndex">节点排序</param>
+            <param name="source">叙词来源</param>
+            <param name="pid">父id</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.TreeItem.#ctor(System.String,System.String,System.String)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="id">节点id</param>
+            <param name="term">节点信息</param>
+            <param name="pid">父id</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.TreeItem.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="id">节点id</param>
+            <param name="term">节点信息</param>
+            <param name="pathTerm">节点路径</param>
+            <param name="pid">父id</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Semantics.TreeItem.#ctor(System.String)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="term">叙词</param>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TreeItem.Id">
+            <summary>
+            节点id
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TreeItem.Term">
+            <summary>
+            叙词信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TreeItem.PathTerm">
+            <summary>
+            叙词路径
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TreeItem.Source">
+            <summary>
+            叙词来源
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TreeItem.OrderIndex">
+            <summary>
+            叙词排序
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.TreeItem.Pid">
+            <summary>
+            父id
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.WordResult.Term">
+            <summary>
+            Word
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Semantics.WordResult.Cc">
+            <summary>
+            Part of speech
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Submission.SubmissionExceptionCodes">
+            <summary>成功提交服务异常代码</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionExceptionCodes.MissingMultipartData">
+            <summary>不是multipart/form-data格式的数据</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionExceptionCodes.UploadingFileFailed">
+            <summary>上传文件失败</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionExceptionCodes.OperationProcessingFailed">
+            <summary>不可预期的异常</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionExceptionCodes.MissingParameterValue">
+            <summary>缺请求参数</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionExceptionCodes.ParameterParsingFailed">
+            <summary>请求参数不是预期的格式</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionExceptionCodes.SubmissionFailed">
+            <summary>提交失败</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Submission.ISubmission">
+            <summary>
+            成果提交服务
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Submission.ISubmission.UploadAsync(System.String,System.IO.Stream)">
+            <summary>
+            上传一个成果文件到目标系统中(以异步的方式)
+            </summary>
+            <param name="file">待上传的文件</param>
+            <returns>文件ID</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Submission.ISubmission.SubmitAsync(Jurassic.PKS.Service.Submission.SubmissionInfo)">
+            <summary>
+            提交成果的文件集和元数据集到目标系统中(以异步的方式)
+            </summary>
+            <param name="info">提交信息</param>
+            <returns>成果ID</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Submission.ISubmission.Upload(System.String,System.IO.Stream)">
+            <summary>
+            上传一个成果文件到目标系统中
+            </summary>
+            <param name="file">待上传的文件</param>
+            <returns>文件ID</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Submission.ISubmission.Submit(Jurassic.PKS.Service.Submission.SubmissionInfo)">
+            <summary>
+            提交成果的文件集和元数据集到目标系统中
+            </summary>
+            <param name="info">提交信息</param>
+            <returns>成果ID</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Submission.SubmissionAction">
+            <summary>
+            提交命令类型
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionAction.Create">
+            <summary>
+            提交一个成果文件及其元数据到目标系统中
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionAction.Replace">
+            <summary>
+            更新成果元数据（成果文件保持不变）
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.Submission.SubmissionAction.Delete">
+            <summary>
+            从目标系统中删除一个成果文件及其元数据
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Submission.SubmissionInfo">
+            <summary>
+            提交信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionInfo.Action">
+            <summary>
+            提交命令类型
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionInfo.NatureKey">
+            <summary>
+            成果的唯一标记Key
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionInfo.FileIDs">
+            <summary>
+            成果文件ID集合
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionInfo.KMD">
+            <summary>
+            元数据集合，遵循元数据规范
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionInfo.Option">
+            <summary>
+            选项参数
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Submission.SubmissionOption">
+            <summary>
+            提交选项参数
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionOption.Authentic">
+            <summary>
+            是否为审核状态
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionOption.AutoComplement">
+            <summary>
+            是否需要调用元数据自动补全功能
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionOption.UploadedBy">
+            <summary>
+            上传人
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionOption.UploadedDate">
+            <summary>
+            上传时间
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionOption.Contact">
+            <summary>
+            联系方式。
+            </summary>
+            <remarks>
+            可以提供多个联系方式，使用“|”分割。如”email:z3@a.com | qq:12345 | wc:3214 | tel: 18601234567”
+            </remarks>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionOption.Application">
+            <summary>
+            提交源系统名称。（从哪个系统提交的，如油田规划应用）
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionOption.Task">
+            <summary>
+            提交的任务名称。（做什么任务的时候提交的，如资源建设、评价总结）
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Submission.SubmissionOption.Values">
+            <summary>
+            自定义扩展信息
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.CRS.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转XML   <CRS codeSpace="china">高斯六度带</CRS>
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.CRS.GetObject(System.Xml.XmlNode)">
+            <summary>
+            XML转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.CRS.RootElementName">
+            <summary>
+            根节点标签名
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Feature.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Feature.#ctor(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="id"></param>
+            <param name="type"></param>
+            <param name="_class"></param>
+            <param name="name"></param>
+            <param name="title"></param>
+            <param name="description"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Feature.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转xml
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Feature.GetObject(System.Xml.XmlNode)">
+            <summary>
+            xml转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Feature.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.FeatureCollection">
+            <summary>
+            特征集合
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.FeatureCollection.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转xml
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.FeatureCollection.GetObject(System.Xml.XmlNode)">
+            <summary>
+            xml转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.FeatureCollection.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GGGXData.CRS">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GGGXData.#ctor">
+            <summary>
+            无参构造
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GGGXData.GetData">
+            <summary>
+            获得xml对象
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.GGGXData.LoadData(System.Xml.XmlDocument)">
+            <summary>
+            xml 转化为对象
+            </summary>
+            <param name="gggxData"></param>
+        </member>
+        <member name="P:Jurassic.PKS.Service.GGGXData.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.IGGGXData">
+            <summary>
+            3GX数据
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Property">
+            <summary>
+            属性定义
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Property.Name">
+             <summary>
+            名称 对应属性n
+             </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Property.Type">
+             <summary>
+            数据类型 对应属性t
+             </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Property.Relation">
+             <summary>
+            关系 对应属性r
+             </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Property.Value">
+            <summary>
+            属性值 
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Property.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转XML
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Property.GetObject(System.Xml.XmlNode)">
+            <summary>
+            XML转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Property.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.PropertyOperator">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.PropertyOperator.Eq">
+            <summary>
+            相等
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.PropertySet">
+            <summary>
+            属性集
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.PropertySet.Name">
+            <summary>
+            属性集 名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.PropertySet.Properties">
+            <summary>
+            属性集合
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.PropertySet.#ctor(System.String)">
+            <summary>
+            有参构造
+            </summary>
+            <param name="name">名称</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.PropertySet.#ctor">
+            <summary>
+            无参构造函数
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.PropertySet.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转化XML
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.PropertySet.GetObject(System.Xml.XmlNode)">
+            <summary>
+            XML转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.PropertySet.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.PropertyDataType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.PropertyDataType.String">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.PropertyDataType.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.PropertyDataType.Decimal">
+            <summary>
+            小数
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Shape.Name">
+            <summary>
+            对象名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Shape.Geometry">
+            <summary>
+            空间坐标 WKT格式
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Shape.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转xml
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Shape.GetObject(System.Xml.XmlNode)">
+            <summary>
+            xml转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Shape.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.SubFeatureCollection">
+            <summary>
+            子特征集合
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.SubFeatureCollection.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            实体转xml
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.SubFeatureCollection.GetObject(System.Xml.XmlNode)">
+            <summary>
+            xml转实体
+            </summary>
+            <param name="node"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.SubFeatureCollection.RootElementName">
+            <summary>
+            根节点标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.IExpressionBuilder`1">
+            <summary>
+            mongoo查询条件对应Json构建
+            </summary>
+            <typeparam name="T">表达式</typeparam>
+        </member>
+        <member name="M:Jurassic.PKS.Service.IExpressionBuilder`1.GetJson(`0)">
+            <summary>
+            获得指定表达式对应的Mongo查询条件Json格式
+            </summary>
+            <param name="exp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.AnalyzeExpressionJson">
+            <summary>
+            解析mongo的查询条件的Json对象对应的表达式
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.AnalyzeExpressionJson.AnalyzeJObject(Jurassic.PKS.Service.IConditionalExpression,Newtonsoft.Json.Linq.JObject)">
+            <summary>
+            解析mongo对应的条件JObject
+            </summary>
+            <param name="exp">条件表达式</param>
+            <param name="single">JObject对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.AnalyzeExpressionJson.AnalyzeJArray(Jurassic.PKS.Service.IConditionalExpression,Newtonsoft.Json.Linq.JArray,System.String)">
+            <summary>
+            解析mongo对应的查询组合条件对应的JArray对象
+            </summary>
+            <param name="exp">条件表达式</param>
+            <param name="array">组合条件JArray对象</param>
+            <param name="parent">组合条件的逻辑运算符</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.BinaryExpressionBuilder">
+            <summary>
+            二元表达式对应Mongo查询条件
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.BinaryExpressionBuilder.GetJson(Jurassic.PKS.Service.BinaryConditionExpression)">
+            <summary>
+            获得简单查询条件对应Json格式
+            </summary>
+            <param name="exp"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.CombineExpressionBuilder">
+            <summary>
+            组合表达式对应Mongo查询条件
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.CombineExpressionBuilder.GetJson(Jurassic.PKS.Service.ConditionCollectionExpression)">
+            <summary>
+            获得复杂查询条件对应Json格式
+            </summary>
+            <param name="exp">组合表达式</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.ExpressionBuilderExtension">
+            <summary>
+            Mongo查询条件构建扩展
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ExpressionBuilderExtension.FromExpressionJson(System.Object)">
+            <summary>
+            根据指定的JSON获得对应条件表达式
+            </summary>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ExpressionBuilderExtension.ToExpressionJson(Jurassic.PKS.Service.IConditionalExpression)">
+            <summary>
+            根据给定的条件表达式获得对应字符串
+            </summary>
+            <param name="exp">条件表达式</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.CustomOpretor">
+            <summary>
+            Mongo运算符
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.Equal">
+            <summary>等于</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.NotEqual">
+            <summary>不等于</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.All">
+            <summary>在值列表内或子查询</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.In">
+            <summary>在值列表内或子查询</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.NotIn">
+            <summary>不在值列表内或子查询</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.Exists">
+            <summary>不在值列表内或子查询</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.LessThan">
+            <summary>小于查询值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.LessThanOrEqual">
+            <summary>小于等于查询值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.GreaterThan">
+            <summary>大于查询值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.GreaterThanOrEqual">
+            <summary>大于等于查询值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.And">
+            <summary>满足所有组合条件</summary>  
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.Or">
+            <summary>满足任意组合条件</summary>  
+        </member>
+        <member name="F:Jurassic.PKS.Service.CustomOpretor.Regex">
+            <summary>正则模糊匹配</summary>  
+        </member>
+        <member name="T:Jurassic.PKS.Service.OpretorConvert">
+            <summary>
+            通用表达式运算符和Mongo运算符转化
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.OpretorConvert.GetMongoName(Jurassic.PKS.Service.BinaryOperator)">
+            <summary>
+            根据操作类型转化为Mongo中的查询操作符
+            </summary>
+            <param name="opretor">定义的通用操作类型（枚举）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.OpretorConvert.ToOp(System.String)">
+            <summary>
+            根据给定的mongo操作符转化为通用操作符枚举类
+            </summary>
+            <param name="mongoOpName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.OpretorConvert.GetMongoName(Jurassic.PKS.Service.LogicOperator)">
+            <summary>
+            根据逻辑操作类型转化为Mongo中的逻辑查询操作符
+            </summary>
+            <param name="opretor">逻辑操作符（枚举）</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.OpretorConvert.ToLogicOp(System.String)">
+            <summary>
+            根据给定的mongo逻辑操作符转化为通用逻辑操作符枚举类
+            </summary>
+            <param name="mongoLogicOpName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.DataSetDataResult">
+            <summary>数据集格式的数据结果</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.DataSetDataResult.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.DataSetDataResult.#ctor(System.Data.DataSet)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.DataSetDataResult.#ctor(System.Data.DataTable)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.DataSetDataResult.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.JsonDataColumn">
+            <summary>JSON数据列</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataColumn.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataColumn.#ctor(System.Data.DataColumn)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.JsonDataColumn.Name">
+            <summary>名称</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.JsonDataColumn.Title">
+            <summary>标题</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.JsonDataColumn.Type">
+            <summary>类型</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataColumn.ToJsonDataType(System.Type)">
+            <summary>转成JSON数据类型</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataColumn.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.JsonDataRow">
+            <summary>JSON数据行</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataRow.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataRow.#ctor(System.Data.DataRow)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataRow.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.JsonDataTable">
+            <summary>JSON数据表</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataTable.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataTable.#ctor(System.Data.DataTable)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.JsonDataTable.Columns">
+            <summary>列集合</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.JsonDataTable.Rows">
+            <summary>行集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonDataTable.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.JsonDataType">
+            <summary>JSON数据类型</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.JsonDataType.Boolean">
+            <summary>Boolean</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.JsonDataType.Number">
+            <summary>数字</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.JsonDataType.String">
+            <summary>字符串</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.JsonDataType.Date">
+            <summary>日期</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.BinaryConditionExpression">
+            <summary>
+            二元条件表达式
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.BinaryOperator">
+            <summary>二元运算符</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.Equal">
+            <summary>等于</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.NotEqual">
+            <summary>不等于</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.All">
+            <summary>在值列表内或子查询</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.In">
+            <summary>在值列表内或子查询</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.NotIn">
+            <summary>不在值列表内或子查询</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.Exists">
+            <summary>不在值列表内或子查询</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.LessThan">
+            <summary>小于查询值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.LessThanOrEqual">
+            <summary>小于等于查询值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.GreaterThan">
+            <summary>大于查询值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.GreaterThanOrEqual">
+            <summary>大于等于查询值</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.BinaryOperator.Regex">
+            <summary>正则模糊匹配</summary>  
+        </member>
+        <member name="T:Jurassic.PKS.Service.ConditionCollectionExpression">
+            <summary>
+            条件组合表达式
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionCollectionExpression.AddOne``1(``0)">
+            <summary>加入一个条件</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.ConditionExpressionBuilder">
+            <summary>
+            过滤条件构建
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.And(Jurassic.PKS.Service.IConditionalExpression[])">
+            <summary>
+            创建一个And过滤条件
+            </summary>
+            <param name="filters">子过滤条件参数数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.And(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.IConditionalExpression})">
+            <summary>
+            创建一个And过滤条件
+            </summary>
+            <param name="filters">子过滤条件数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.Or(Jurassic.PKS.Service.IConditionalExpression[])">
+            <summary>
+            创建一个Or过滤条件
+            </summary>
+            <param name="filters">子过滤条件参数数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.Or(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.IConditionalExpression})">
+            <summary>
+            创建一个Or过滤条件
+            </summary>
+            <param name="filters">子过滤条件集合</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.Eq(System.String,System.String)">
+            <summary>
+            创建一个Equal过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">匹配值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.NotEq(System.String,System.String)">
+            <summary>
+            创建一个NotEqual过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">匹配值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.LessThan(System.String,System.Int32)">
+            <summary>
+            创建一个LessThan过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">匹配值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.LessThanOrEqual(System.String,System.Int32)">
+            <summary>
+            创建一个LessThanOrEqual过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">匹配值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.GreaterThan(System.String,System.Int32)">
+            <summary>
+            创建一个GreaterThan过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">匹配值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.GreaterThanOrEqual(System.String,System.Int32)">
+            <summary>
+            创建一个GreaterThanOrEqual过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">匹配值</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.Exists(System.String,System.Boolean)">
+            <summary>
+            创建一个Exists过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">是否存在</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.In(System.String,System.String[])">
+            <summary>
+            创建一个In过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">值数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ConditionExpressionBuilder.NotIn(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            创建一个NotIn过滤条件
+            </summary>
+            <param name="field">字段名称</param>
+            <param name="value">值数组</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.IConditionalExpression">
+            <summary>
+            条件表达式接口
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IConditionalExpression.Not">
+            <summary>
+            是否非运算
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IConditionalExpression.IsCombine">
+            <summary>
+            是否为组合条件
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IConditionalExpression.Children">
+            <summary>
+            包含的条件表达式组合
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.LogicOperator">
+            <summary>
+            逻辑运算符
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.LogicOperator.And">
+            <summary>
+            满足所有组合条件
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.LogicOperator.Or">
+            <summary>
+            满足任意组合条件
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.UnaryConditionExpression">
+            <summary>
+            一元条件表达式
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.DataFormat">
+            <summary>数据格式</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.Unknown">
+            <summary>不支持</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.DOC">
+            <summary>Word文档</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.DOCX">
+            <summary>DOCX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.PPT">
+            <summary>PPT</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.PPTX">
+            <summary>PPTX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.XLS">
+            <summary>XLS</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.XLSX">
+            <summary>XLSX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.PDF">
+            <summary>PDF</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.HTML">
+            <summary>HTML</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.TXT">
+            <summary>TXT</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.XML">
+            <summary>XML</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.PNG">
+            <summary>PNG</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.JPG">
+            <summary>JPG</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.BMP">
+            <summary>BMP</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.TIF">
+            <summary>TIF</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.GIF">
+            <summary>GIF</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.ICO">
+            <summary>ICO</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.JSON">
+            <summary>JSON</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.URL">
+            <summary>链接</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.DataSet">
+            <summary>数据集</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.GDB">
+            <summary>GDB</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat.GDBX">
+            <summary>GDBX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.DataFormat._3GX">
+            <summary>3GX</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.IMetadata">
+            <summary>元数据接口</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.IIId">
+            <summary>ID，唯一标识元数据</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.IndexedDate">
+            <summary>索引日期</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.Url">
+            <summary>适配器URL，元数据源地址</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.Title">
+            <summary>正式标题</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.Description">
+            <summary>描述</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.Creator">
+            <summary>创建者</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.CreatedDate">
+            <summary>创建日期</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.Thumbnail">
+            <summary>缩略图</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.IMetadata.Fulltext">
+            <summary>全文</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.IMetadata.GetValue(System.String)">
+            <summary>从KMD JSON中得某个元数据值</summary>
+            <param name="jsonPath">元数据名称，如source.url或者dc.title[0].type</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.IMetadata.ToIndex">
+            <summary>转换为索引信息</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.JsonContainer">
+            <summary>
+            使用扁平的结构来存储元数据值。
+            key使用JSONPath的结构，如"iiid"、"dc.title[0].type"等；
+            value只能为<c>string</c>、<c>bool</c>、<c>int</c>
+            、<c>decimal</c>和对应的数组。
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonContainer.#ctor">
+            <summary>
+            初始化扁平结构的字典结构
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonContainer.Add(System.String,System.Object)">
+            <summary>
+            向字典结构中增加一个key-value键值对。
+            </summary>
+            <param name="keyPath">属性路径。JSONPath结构，如“source.url”、
+            “dc.title[0].type”、“dc.title[0].name”</param>
+            <param name="value">属性值。只能为<c>string</c>、<c>bool</c>、<c>int</c>
+            、<c>decimal</c>和对应的数组。</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.JsonContainer.Remove(System.String)">
+            <summary>
+            向字典中删除一个键值对
+            add by shiyaru 20170110
+            </summary>
+            <param name="keyPath">删除的键值</param>
+        </member>
+        <member name="T:Jurassic.PKS.Service.MetadataCollection">
+            <summary>元数据集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.MetadataCollection.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.MetadataCollection.#ctor(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.IMetadata})">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.MetadataCollection.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.MetadataDefinition.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.KMDConfiguration">
+            <summary>元数据定义字典</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.#ctor(System.Collections.Generic.Dictionary{System.String,Jurassic.PKS.Service.MetadataDefinition})">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.#ctor(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.MetadataDefinition})">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.#ctor(System.String)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.KMDConfiguration.KeyPathMappers">
+            <summary>键路径映射</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.InitKeyPathMappers(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.MetadataDefinition})">
+            <summary>初始化键路径映射</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.ParseGet(System.String)">
+            <summary>获得Get映射</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.ParseSet(System.String)">
+            <summary>获得Set映射</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.GetTagType(System.String)">
+            <summary>获得标签类型</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.GetValueByPath(System.String)">
+            <summary>根据Key路径获得值</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.KMDConfiguration.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.MetadataDefinitionCollection">
+            <summary>元数据定义集合</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.MetadataDefinitionCollection.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.MetadataDefinitionCollection.#ctor(System.Collections.Generic.IEnumerable{Jurassic.PKS.Service.MetadataDefinition})">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.MetadataDefinitionCollection.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.MimeTypeAttribute">
+            <summary>HTTP应答内容类型特性</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.MimeTypeAttribute.#ctor(System.String,System.Boolean)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.MimeTypeAttribute.Value">
+            <summary>值</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.MimeTypeAttribute.IsStreamOutput">
+            <summary>是否是流输出</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.MimeTypeConst">
+            <summary>HTTP应答内容类型常量</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.Stream">
+            <summary>流</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.DOC">
+            <summary>DOC</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.DOCX">
+            <summary>DOCX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.PPT">
+            <summary>PPT</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.PPTX">
+            <summary>PPTX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.XLS">
+            <summary>XLS</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.XLSX">
+            <summary>XLSX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.PDF">
+            <summary>PDF</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.HTML">
+            <summary>HTML</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.TEXT">
+            <summary>TEXT</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.XML">
+            <summary>XML</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.PNG">
+            <summary>PNG</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.JPG">
+            <summary>JPG</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.BMP">
+            <summary>BMP</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.TIF">
+            <summary>TIF</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.GIF">
+            <summary>GIF</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.ICON">
+            <summary>ICON</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.JSON">
+            <summary>JSON</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.GDB">
+            <summary>GDB</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.GDBX">
+            <summary>GDBX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst._3GX">
+            <summary>3GX</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.DataSet">
+            <summary>数据集</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.Url">
+            <summary>Url</summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.MimeTypeConst.Exception">
+            <summary>异常</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Pager">
+            <summary>分页参数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Pager.#ctor">
+            <summary>构造函数</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Pager.#ctor(System.Int32,System.Int32)">
+            <summary>构造函数</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Pager.From">
+            <summary>起始索引</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Pager.Size">
+            <summary>每页数量</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Pager.ToString">
+            <summary>生成JSON串</summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.RemarkAttribute">
+            <summary>
+            标注属性
+            </summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.RemarkAttribute.Remark">
+            <summary>  
+            备注  
+            </summary>  
+        </member>
+        <member name="T:Jurassic.PKS.Service.EnumExtension">
+            <summary>  
+            枚举扩展类  
+            </summary>  
+        </member>
+        <member name="M:Jurassic.PKS.Service.EnumExtension.GetRemark(System.Enum)">
+            <summary>  
+            获取枚举的备注信息  
+            </summary>  
+            <param name="em"></param>  
+            <returns></returns>  
+        </member>
+        <member name="M:Jurassic.PKS.Service.EnumExtension.ByRemark``1(System.String)">
+            <summary>  
+            获取备注信息对应的枚举值  
+            </summary>  
+            <param name="remark"></param>  
+            <returns></returns>  
+        </member>
+        <member name="T:Jurassic.PKS.Service.UiType">
+            <summary>
+            前台展示类型
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.UiType.Label">
+            <summary>
+            标签
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.UiType.Dropdown">
+            <summary>
+            下拉框
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.UiType.Text">
+            <summary>
+            文本框
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.UiType.Textarea">
+            <summary>
+            文本域
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.UiType.Tageditor">
+            <summary>
+            多文本框
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.UiType.Datetime">
+            <summary>
+            日期结束
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.UiType.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.TagType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.TagType.String">
+            <summary>
+            字符串
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.TagType.StringArray">
+            <summary>
+            字符串 ， 表示一个字符串数组 string[]
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.TagType.DateString">
+            <summary>
+            字符串 ，表示字符串的date格式 yyyy-MM-dd HH:mm:ss   如: 2016-09-20 14:53:15
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.TagType.WKTString">
+            <summary>
+            字符串 ，表示空间数据的WKT(well known text)格式
+            </summary>
+        </member>
+        <member name="F:Jurassic.PKS.Service.TagType.Base64StringArray">
+            <summary>
+            字符串 ，表示Base64流的字符串格式
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.ExtensionMethods">
+            <summary>通用工具</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ExtensionMethods.ToJson(System.Object,Newtonsoft.Json.JsonSerializerSettings)">
+            <summary>生成对象JSON串</summary>
+        </member>
+        <member name="P:Jurassic.PKS.Service.ExtensionMethods.ISODateTimeFormat">
+            <summary>ISO日期时间格式</summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ExtensionMethods.ToISODate(System.String)">
+            <summary>
+            将ISODate字符串转为本地时间的<c>DateTime</c>
+            </summary>
+            <param name="isoDateTimeString">ISO Date格式的字符串，如：2012-11-02T07:58:51.718Z</param>
+            <returns><c>代表本地时间的<c>DateTime</c></c></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ExtensionMethods.ToISODateString(System.DateTime)">
+            <summary>
+            将本地时间转为ISODate格式的字符串
+            </summary>
+            <param name="localTime">代表本地时间的<c>DateTime</c></param>
+            <returns>ISODate格式的字符串，格式如：2012-11-02T07:58:51.718Z</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.ExtensionMethods.ToJsonContainer(System.String)">
+            <summary>
+            将层次json转为扁平的Key-Value键值对，之前Key为json的属性路径，如dc.title[0].type。
+            </summary>
+            <param name="json">JSON字符串</param>
+            <returns><c>KMDContainer</c></returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Util.IEntitySerialization`1">
+            <summary>
+            定义元属性实体类与Xml之间的转换接口
+            </summary>
+            <typeparam name="T">元属性实体类</typeparam>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.IEntitySerialization`1.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            将实体类<c>T</c>使用<see cref="T:System.Xml.XmlWriter"/>转为XML 数据写到流、文件、文本
+            读取器或字符串。
+            </summary>
+            <param name="writer"><see cref="T:System.Xml.XmlWriter"/>实例</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.IEntitySerialization`1.GetObject(System.Xml.XmlNode)">
+            <summary>
+            将<see cref="T:System.Xml.XmlNode"/>节点的信息转为实体类<c>T</c>
+            </summary>
+            <param name="node"><see cref="T:System.Xml.XmlNode"/>实例，该实例包含了<c>T</c>
+            实体类所需要的信息</param>
+            <returns>实体类<c>T</c></returns>
+        </member>
+        <member name="P:Jurassic.PKS.Service.Util.IEntitySerialization`1.RootElementName">
+            <summary>
+            根节点元素标签名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.PKS.Service.Util.XmlHelper">
+            <summary>
+            Xml操作帮助类
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.XmlHelper.WriteOptionalAttribute(System.Xml.XmlWriter,System.String,System.String)">
+            <summary>
+            将一个属性写入到<see cref="T:System.Xml.XmlWriter"/>中。
+            </summary>
+            <remarks>
+            <note type="caution">如果属性值<paramref name="value"/>为空，
+            该方法不写入属性元素到<see cref="T:System.Xml.XmlWriter"/>中。</note>
+            </remarks>
+            <param name="writer"><see cref="T:System.Xml.XmlWriter"/>实例</param>
+            <param name="localName">属性名</param>
+            <param name="value">属性值</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.XmlHelper.GetOptionalAttributeValue(System.Xml.XmlNode,System.String)">
+            <summary>
+            根据属性名获取Xml节点的属性值
+            </summary>
+            <param name="node">Xml节点</param>
+            <param name="attrName">属性名</param>
+            <returns>属性值。如果在<paramref name="node"/>Xml节点中没有找到
+            属性名,返回空字符串。
+            </returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.XmlHelper.WriteEntityCollection``1(System.Xml.XmlWriter,System.Collections.Generic.IList{``0})">
+            <summary>
+            将实体类集合使用<see cref="T:System.Xml.XmlWriter"/>转为XML 数据写到流、文件、文本
+            读取器或字符串。
+            </summary>
+            <typeparam name="T">实体类，代表元属性类型</typeparam>
+            <param name="writer"><see cref="T:System.Xml.XmlWriter"/>实例</param>
+            <param name="entities">实体类<c>T</c>集合</param>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.XmlHelper.GetEntityCollection``1(System.Xml.XmlDocument,System.String)">
+            <summary>
+            从属性卡中根据代表实体类的Xml节点路径提取实体集合
+            </summary>
+            <typeparam name="T">实体类，代表元属性类型</typeparam>
+            <param name="card">属性卡</param>
+            <param name="nodePath">代表实体类的Xml节点路径</param>
+            <returns>实体类集合</returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.XmlHelper.GetSubElementInnerText(System.Xml.XmlNode,System.String)">
+            <summary>
+            获得子节点的innerText
+            </summary>
+            <param name="xmlNode"></param>
+            <param name="nodePath"></param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.XmlHelper.GetEntityCollection``1(System.Xml.XmlNode,System.String)">
+            <summary>
+            获取实体集合
+            </summary>
+            <param name="xmlNode"></param>
+            <param name="nodePath">代表实体类的Xml节点路径</param>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.PKS.Service.Util.XmlHelper.GetXmlWriter(System.IO.Stream)">
+            <summary>
+            创建<see cref="T:System.Xml.XmlWriter"/>实例。该方法内部使用<see cref="T:System.Xml.XmlWriterSettings"/>
+            来控制<see cref="T:System.Xml.XmlWriter"/>实例的行为。
+            </summary>
+            <param name="output">数据流</param>
+            <returns><see cref="T:System.Xml.XmlWriter"/>实例</returns>
+        </member>
+        <member name="T:Jurassic.PKS.Service.StringHelper">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Jurassic.PKS.Service.StringHelper.FilterString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.TimeIndeterminateValueType.after">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.TimeIndeterminateValueType.before">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.TimeIndeterminateValueType.now">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.TimeIndeterminateValueType.unknown">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.Before">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.After">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.Begins">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.Ends">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.During">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.Equals">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.Contains">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.Overlaps">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.Meets">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.OverlappedBy">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.MetBy">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.BegunBy">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.RelatedTimeTypeRelativePosition.EndedBy">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.coordinateOperationName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.csName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.datumName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.ellipsoidName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.groupName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.meridianName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.methodName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.name">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.parameterName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType.srsName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.GraphTypeType.TREE">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.GraphTypeType.BICONNECTED">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.DrawingTypeType.POLYLINE">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.DrawingTypeType.ORTHOGONAL">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.LineTypeType.STRAIGHT">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.LineTypeType.BENT">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MIN_CROSSINGS">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MIN_AREA">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MIN_BENDS">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MAX_BENDS">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.UNIFORM_BENDS">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MIN_SLOPES">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MIN_EDGE_LENGTH">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MAX_EDGE_LENGTH">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.UNIFORM_EDGE_LENGTH">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MAX_ANGULAR_RESOLUTION">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MIN_ASPECT_RATIO">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.AesheticCriteriaType.MAX_SYMMETRIES">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SymbolTypeEnumeration.svg">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SymbolTypeEnumeration.xpath">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SymbolTypeEnumeration.other">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.QueryGrammarEnumeration.xpath">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.QueryGrammarEnumeration.xquery">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.QueryGrammarEnumeration.other">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SignType.Item">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SignType.Item1">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType2.coord">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType2.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType2.pointProperty">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType2.pointRep">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType2.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType2.posList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType7.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType7.pointProperty">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType7.pointRep">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType7.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType7.posList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.linear">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.geodesic">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.circularArc3Points">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.circularArc2PointWithBulge">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.circularArcCenterPointWithRadius">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.elliptical">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.clothoid">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.conic">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.polynomialSpline">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.cubicSpline">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CurveInterpolationType.rationalSpline">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.KnotTypesType.uniform">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.KnotTypesType.quasiUniform">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.KnotTypesType.piecewiseBezier">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType6.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType6.pointProperty">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType6.pointRep">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType6.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType6.posList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType4.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType4.pointProperty">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType4.pointRep">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType4.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType4.posList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType5.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType5.pointProperty">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType5.pointRep">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType5.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType5.posList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType4.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType4.pointProperty">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType4.pointRep">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType4.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType4.posList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType3.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType3.pointProperty">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType3.pointRep">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType3.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType3.posList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType1.coord">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType1.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType1.pointProperty">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType1.pointRep">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType1.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType1.posList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType5.exterior">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType5.outerBoundaryIs">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType3.innerBoundaryIs">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType3.interior">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType6.exterior">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType6.outerBoundaryIs">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType8.innerBoundaryIs">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType8.interior">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.none">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.planar">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.spherical">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.elliptical">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.conic">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.tin">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.parametricCurve">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.polynomialSpline">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.rationalSpline">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SurfaceInterpolationType.triangulatedSpline">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType8.exterior">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType8.outerBoundaryIs">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType7.exterior">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType7.outerBoundaryIs">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.Boolean">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.BooleanList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.Category">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.CategoryExtent">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.CategoryList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.CompositeValue">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.Count">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.CountExtent">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.CountList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.Null">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.Quantity">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.QuantityExtent">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.QuantityList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10.ValueArray">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType10._Object">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.N">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.NNE">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.NE">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.ENE">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.E">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.ESE">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.SE">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.SSE">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.S">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.SSW">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.SW">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.WSW">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.W">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.WNW">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.NW">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.CompassPointEnumeration.NNW">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType9.horizontalAngle">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType9.vector">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType9.verticalAngle">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType2.coord">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType2.coordinates">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType2.lowerCorner">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType2.pos">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType2.upperCorner">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.FileValueModelType.RecordInterleaved">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType11.BooleanList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType11.CategoryList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType11.CountList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType11.DataBlock">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType11.File">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType11.QuantityList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType11.ValueArray">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.IncrementOrder.xy">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.IncrementOrder.yx">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.IncrementOrder.xy1">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.IncrementOrder.xy2">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SequenceRuleNames.Linear">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SequenceRuleNames.Boustrophedonic">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SequenceRuleNames.Cantordiagonal">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SequenceRuleNames.Spiral">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SequenceRuleNames.Morton">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.SequenceRuleNames.Hilbert">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Item1ChoiceType.subject">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Item1ChoiceType.target">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.coordinateOperationName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.csName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.datumName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.ellipsoidName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.groupName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.meridianName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.methodName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.name">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.parameterName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType1.srsName">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType1.decimalMinutes">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType1.minutes">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemsChoiceType1.seconds">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.isSphere.sphere">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType2.inverseFlattening">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType2.isSphere">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType2.semiMinorAxis">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType9.booleanValue">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType9.dmsAngleValue">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType9.integerValue">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType9.integerValueList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType9.stringValue">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType9.value">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType9.valueFile">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType9.valueList">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType.conversionToPreferredUnit">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType.roughConversionToPreferredUnit">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.CoordinateSystemAxis">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.Definition">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.DefinitionCollection">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.DefinitionProxy">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.Dictionary">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.Ellipsoid">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.OperationMethod">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.PrimeMeridian">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.TimeCalendarEra">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.ItemChoiceType3.UnitDefinition">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType.definitionMember">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType.dictionaryEntry">
+            <remarks/>
+        </member>
+        <member name="F:Terradue.ServiceModel.Ogc.Gml311.Items1ChoiceType.indirectEntry">
+            <remarks/>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jurassic.WebHtmlEditor</name>
+    </assembly>
+    <members>
+        <member name="M:Jurassic.WebHtmlEditor.EditorExtensions.HtmlEditor(System.Web.Mvc.HtmlHelper,System.String,System.String,System.Boolean)">
+            <summary>
+            根据指定名称的TextArea元素创建一个HtmlEditor编辑器
+            </summary>
+            <param name="htmlHelper">HTML帮助类</param>
+            <param name="textAreaName">TextArea元素的名称(不是ID，是name属性）</param>
+            <param name="textAreaName">用于js编程的编辑器对象名称</param>
+            <returns>Html编辑器的调用代码</returns>
+        </member>
+        <member name="M:Jurassic.WebHtmlEditor.EditorExtensions.HtmlEditor(System.Web.Mvc.HtmlHelper,Jurassic.WebHtmlEditor.EditorFormData)">
+            <summary>
+            根据指定EditorFormData配置创建一个HtmlEditor编辑器
+            </summary>
+            <param name="htmlHelper">HTML帮助类</param>
+            <param name="formData">配置信息</param>
+            <returns>Html编辑器的调用代码</returns>
+        </member>
+        <member name="T:Jurassic.WebHtmlEditor.EditorFormData">
+            <summary>
+            用于初始化HtmlEditor的实体类
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebHtmlEditor.EditorFormData.TextAreaName">
+            <summary>
+            和编辑对应的TextArea控件的名称(Name属性）
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebHtmlEditor.EditorFormData.TextAreaId">
+            <summary>
+            和编辑器对应的TextArea的ID属性，当无法确知Name属性时，可指定ID
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebHtmlEditor.EditorFormData.FullToolbar">
+            <summary>
+            是否采用全部工具栏（默认为否）
+            </summary>
+        </member>
+    </members>
+</doc>

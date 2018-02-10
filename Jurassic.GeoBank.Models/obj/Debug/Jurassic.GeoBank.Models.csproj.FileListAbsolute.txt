@@ -1,0 +1,11 @@
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\Jurassic.GeoBank.Models.dll
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\Jurassic.GeoBank.Models.pdb
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\Jurassic.PKS.Service.dll
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\MongoDB.Bson.dll
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\Newtonsoft.Json.dll
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\Jurassic.PKS.Service.pdb
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\Jurassic.PKS.Service.xml
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\MongoDB.Bson.xml
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\bin\Debug\Newtonsoft.Json.xml
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\obj\Debug\Jurassic.GeoBank.Models.dll
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank.Models\obj\Debug\Jurassic.GeoBank.Models.pdb

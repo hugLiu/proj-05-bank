@@ -1,0 +1,31 @@
+﻿@using Jurassic.WebGeoBank.Models;
+@model StatInfo
+@{
+}
+<h2>成果统计</h2>
+<table>
+    <tr class="mini-clearfix ">
+        <td>
+            总成果数:
+        </td>
+        <td>
+            @Model.TotalProductCount
+        </td>
+    </tr>
+    <tr class="mini-clearfix ">
+        <td>
+            总文件数:
+        </td>
+        <td>
+            @Model.TotalFilesCount
+        </td>
+    </tr>
+    <tr>
+        <td>
+            文件总长度:
+        </td>
+        <td>
+            @Model.TotalFilesSize
+        </td>
+    </tr>
+</table>    

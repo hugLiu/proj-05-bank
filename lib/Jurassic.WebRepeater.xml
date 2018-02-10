@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jurassic.WebRepeater</name>
+    </assembly>
+    <members>
+        <member name="T:Jurassic.WebRepeater.Controllers.MasterGridController`1">
+            <summary>
+            提供一个通用列表管理的基类，包含基本的CRUD操作
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.#ctor(Jurassic.AppCenter.EFAuditDataService{`0})">
+            <summary>
+            ctor
+            </summary>
+            <param name="dataProvider">数据提供者</param>
+        </member>
+        <member name="P:Jurassic.WebRepeater.Controllers.MasterGridController`1.ModelFilters">
+            <summary>
+            筛选器，用于过滤查到的记录
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.Index(Jurassic.CommonModels.Articles.PageModel)">
+            <summary>
+            返回一个分页的文章列表
+            </summary>
+            <param name="pageModel">从视图传过来的分页数据对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.BeforeGetPageData(Jurassic.CommonModels.Articles.PageModel)">
+            <summary>
+            定义在获取分页数据之前的操作
+            </summary>
+            <param name="pageModel"></param>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.AfterGetPageData(Jurassic.AppCenter.Pager{`0})">
+            <summary>
+            定义在获取分页数据之后的操作
+            </summary>
+            <param name="pager"></param>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.Edit(System.Int32)">
+            <summary>
+            编辑页面
+            </summary>
+            <param name="id">对象ID</param>
+            <returns>用户编辑页面</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.BeforeShowEditForm(`0)">
+            <summary>
+            在显示录入窗体之前调用
+            </summary>
+            <param name="ca"></param>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.Edit(`0)">
+            <summary>
+            提交编辑
+            </summary>
+            <param name="art"></param>
+            <param name="caId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.BeforeSaving(`0)">
+            <summary>
+            重写此方法以决定是否用系统默认的方式保存。
+            </summary>
+            <param name="ca">栏目文章对象</param>
+            <returns>是否用系统默认的方式保存</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.AfterSaved(`0)">
+            <summary>
+            重写此方法以定义成功保存以后的返回值
+            </summary>
+            <param name="ca">栏目文章对象</param>
+            <returns>返回给客户端的输出</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.MasterGridController`1.Delete(System.String)">
+            <summary>
+            提交删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.WebRepeater.Controllers.ArticleController">
+            <summary>
+            提供一个内容管理文章管理的基类，包含基本的文章的CRUD操作
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebRepeater.Controllers.ArticleController.ModelFilters">
+            <summary>
+            筛选器，用于过滤查到的记录
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.ArticleController.Index(Jurassic.CommonModels.Articles.PageModel)">
+            <summary>
+            返回一个分页的文章列表
+            </summary>
+            <param name="pageModel">从视图传过来的分页数据对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.ArticleController.Edit(System.Int32)">
+            <summary>
+            编辑页面
+            </summary>
+            <param name="caId">栏目文章ID</param>
+            <returns>用户编辑页面</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.ArticleController.BeforeShowEditForm(Jurassic.CommonModels.Articles.Base_CatalogArticle)">
+            <summary>
+            在显示录入窗体之前调用
+            </summary>
+            <param name="ca"></param>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.ArticleController.Edit(Jurassic.CommonModels.Articles.Base_Article,System.Int32)">
+            <summary>
+            提交编辑
+            </summary>
+            <param name="art"></param>
+            <param name="caId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.ArticleController.BeforeSaving(Jurassic.CommonModels.Articles.Base_CatalogArticle)">
+            <summary>
+            重写此方法以决定是否用系统默认的方式保存。
+            </summary>
+            <param name="ca">栏目文章对象</param>
+            <returns>是否用系统默认的方式保存</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.ArticleController.AfterSaved(Jurassic.CommonModels.Articles.Base_CatalogArticle)">
+            <summary>
+            重写此方法以定义成功保存以后的返回值
+            </summary>
+            <param name="ca">栏目文章对象</param>
+            <returns>返回给客户端的输出</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.Controllers.ArticleController.Delete(System.String)">
+            <summary>
+            提交删除
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.WebRepeater.ExtRenderEvent">
+            <summary>
+            在扩展属性集生成表单录入区时，单个属性生成控件后调用的委托
+            这有助于在属性控件后添加自定义内容
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebRepeater.ExtRenderEvent.UserRenderer">
+            <summary>
+            用户自定义单个属性生成控件的委托
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebRepeater.ExtRenderEvent.OnExtRendered">
+            <summary>
+            单个属性生成控件后调用的委托
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebRepeater.ExtRenderEvent.Inline">
+            <summary>
+            是否以紧凑格式生成（所有录入项在一行内）默认为false
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebRepeater.RepeaterExtensions.Repeater(System.Web.Mvc.HtmlHelper,Jurassic.WebRepeater.RepeaterFormData)">
+            <summary>
+            根据指定的分页数据源创建一个分页的Repeater控件
+            </summary>
+            <param name="htmlHelper">HTML帮助类</param>
+            <param name="formData">Repeater的配置对象</param>
+            <returns>分页的Html结果以相关前台脚本</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.RepeaterExtensions.ExtsEditor(System.Web.Mvc.HtmlHelper{Jurassic.CommonModels.Articles.Base_Article},Jurassic.WebRepeater.ExtRenderEvent)">
+            <summary>
+            生成Base_Article的扩展属性Exts集合的表单录入区域
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="renderEvent">包含回调委托的包装对象</param>
+            <returns>Html的录入表单区域</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.RepeaterExtensions.TargetsEditor(System.Web.Mvc.HtmlHelper{Jurassic.CommonModels.Articles.Base_Article},System.Int32)">
+            <summary>
+            生成Base_Article的关联文章属性TargetArticles集合的表单录入区域
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="article">Base_Article 文章对象</param>
+            <param name="itemCatalogId">Base_Article 文章所在栏目ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.RepeaterExtensions.ExtDisplay(System.Web.Mvc.HtmlHelper{Jurassic.CommonModels.Articles.Base_Article},Jurassic.WebRepeater.ExtRenderEvent)">
+            <summary>
+            生成Base_Article的扩展属性Exts集合的数据显示区域
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="renderEvent">包含回调委托的包装对象</param>
+            <returns>Html结果显示区域</returns>
+        </member>
+        <member name="M:Jurassic.WebRepeater.RepeaterExtensions.ExtsEditor(System.Web.Mvc.HtmlHelper{Jurassic.CommonModels.Articles.Base_Article},System.Func{System.Web.Mvc.HtmlHelper{Jurassic.CommonModels.Articles.Base_ArticleExt},System.Web.WebPages.HelperResult})">
+            <summary>
+            生成Base_Article的扩展属性Exts集合的表单录入区域
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="onExtRendered">扩展展性录入区生成后的回调</param>
+            <returns>Html结果</returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,2 @@
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank\obj\Debug\Jurassic.GeoBank.csprojResolveAssemblyReference.cache
+E:\projs\图形库知识库一体化项目\GeoBank\开发库\04编码\Jurassic.GeoBank\obj\Debug\Jurassic.WebGeoBank.g.resources

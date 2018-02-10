@@ -1,0 +1,17 @@
+﻿<ul id="ptTree" class="mini-tree" url="@Url.Action("Cat", "PT")" style="width:100%;height:100%;padding:5px;"
+    showtreelines="true" showexpandbuttons="true"
+    showtreeicon="true" textfield="Name" idfield="Id" parentfield="ParentId" resultastree="false" expandonnodeclick="false"
+    expandonload="2"
+    onnodeselect="onPtTreeClick"></ul>
+<script type="text/javascript">
+    var ptIndexUrl = "@Url.Action("Index","PT")?id=";
+    function onPtTreeClick(e) {
+        var id = e.node.Id;
+        if (iframe.contentWindow.location.href.indexOf(ptIndexUrl) < 0) {
+            goUrl(ptIndexUrl + id);
+        }
+        else {
+            iframe.contentWindow.setDataId(id);
+        }
+    }
+</script>

@@ -1,0 +1,55 @@
+﻿{
+  "ProductType": [
+    "储量报告",
+    "储量参数表",
+    "高压物性资料统计表",
+    "含油面积图",
+    "交会图",
+    "圈闭要素表",
+    "试油地质总结",
+    "试油小结",
+    "体积系数取值表",
+    "完井地化报告",
+    "完井地质总结报告",
+    "完井综合录井报告",
+    "完井综合录井报告"
+  ],
+  "BO_Type": [
+    "Basin",
+    "CalUnit",
+    "Field",
+    "Organization",
+    "Play",
+    "Pool",
+    "Stratum",
+    "Trap",
+    "Well",
+    "WellBlock",
+    "Workarea"
+  ],
+  "Theme_Type": [
+    "BA",
+    "BD",
+    "BP",
+    "BT"
+  ],
+  "Contributor_Type": [
+    "Auditor",
+    "Author",
+    "Drawer",
+    "Matser",
+    "Submitter"
+  ],
+  "Date_Type": [
+    "Created",
+    "Submitted"
+  ],
+  "Description_Type": [
+    "Abstract"
+  ],
+  "DcTitle_Type": [
+    "Formal",
+    "Test"
+  ],
+  "GeologySeries_Type": []
+}

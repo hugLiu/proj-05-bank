@@ -1,0 +1,818 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Jurassic.WebQuery</name>
+    </assembly>
+    <members>
+        <member name="T:Jurassic.WebQuery.AdvDataConfigManager">
+            <summary>
+            配合数据采集组件的配置管理类，管理列表和编辑界面的各项参数
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataConfigManager.GetPropertyConfig(Jurassic.CommonModels.Articles.CatalogExtAttribute,System.String,System.String)">
+            <summary>
+            根据指定的类型名称和属性名称获取对应的属性配置项
+            </summary>
+            <param name="className">类型名称</param>
+            <param name="propName">属性名称</param>
+            <param name="attr">标签属性</param>
+            <returns>属性配置项</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataConfigManager.Save">
+            <summary>
+            当配置数据发生修改时保存配置到配置文件
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.BaseDataController`2">
+            <summary>
+            通用的列表界面控制器基类，实体主键是任意类型
+            </summary>
+            <typeparam name="TModel">模型的类型</typeparam>
+            <typeparam name="TKey">数据主键的类型</typeparam>
+        </member>
+        <member name="P:Jurassic.WebQuery.BaseDataController`2.DataService">
+            <summary>
+            数据服务对象的接口实现
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.#ctor">
+            <summary>
+            ctor,根据指定的数据提供者创建
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.Index">
+            <summary>
+            返回列表页视图，一般情况下不需要重写此方法
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.GetData">
+            <summary>
+            返回列表页视图所需要的列表数据，和高级查询配合，因此
+            只需要返回原始数据集
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.Delete(System.String)">
+            <summary>
+            删除一串ID代表的数据
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.Details(System.String,Jurassic.CommonModels.Articles.PageModel)">
+            <summary>
+            返回数据模型中子类的集合
+            </summary>
+            <param name="name"></param>
+            <param name="pm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.Edit(`1)">
+            <summary>
+            打开新增或编辑器
+            </summary>
+            <param name="id">id=0时，打开的是新增页，不为0时，打开的是编缉页</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.BeforeShowing(`0)">
+            <summary>
+            在派生类中重写，在编辑页面显示前调用
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.Copy(`1)">
+            <summary>
+            复制
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.WebQuery.BaseDataController`2.Strict">
+            <summary>
+            是否使用MVC的强制验证,默认为否
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.Edit(`0)">
+            <summary>
+            接受从新增或编辑页提交的数据交持久化保存
+            </summary>
+            <param name="t">从前台Edit页面传递过来的业务对象, 在这里并没有集合属性的值</param>
+            <returns>保存成功或失败的提示</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.AfterSaved(`0)">
+            <summary>
+            在派生类中重写，在成功保存后调用
+            </summary>
+            <param name="t">保存后的对象</param>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.BeforeSaving(`0)">
+            <summary>
+            在派生类中重写，在保存前调用
+            </summary>
+            <param name="t">要保存的对象</param>
+            <returns>是否继续保存</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.SaveDetails``1(`0,System.String)">
+            <summary>
+            分析页面传过来的修改过的子表对象数组，并更新原有子表对象集合
+            此方法被自动反射调用
+            </summary>
+            <typeparam name="TItemModel">子表对象类型</typeparam>
+            <param name="t">主表对象</param>
+            <param name="propName">子表集合在主表对象中的属性名称</param>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.GetPropList(System.String)">
+            <summary>
+            获取属性中定义的下拉列表选项集合
+            </summary>
+            <param name="prop">属性名称</param>
+            <returns>{id,text}的集合</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.GetUserDefineList(System.String)">
+            <summary>
+            传递用户自定义的下拉列表数据类型
+            </summary>
+            <param name="prop">属性名称</param>
+            <returns>返回{id, text}对象的Json数据</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.GetLinkedList(System.String,System.String)">
+            <summary>
+            在派生类中重写，获取主表中联动的下拉列表
+            </summary>
+            <param name="linkedValue">联动的值</param>
+            <param name="prop">属性名称</param>
+            <returns>Json序列化后的{id, text}集合</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.GetDetailPropList(System.String,System.String)">
+            <summary>
+            获取子表中Grid的下拉列表选项
+            </summary>
+            <param name="detail">子表中模型中的集合属性名称</param>
+            <param name="prop">集合属性中单个子项的属性名称</param>
+            <returns>Json序列化后的{id, text}集合</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.BaseDataController`2.GetDetailLinkedList(System.String,System.String,System.String)">
+            <summary>
+            在派生类中重写，用于返回在子表中某列的联动下拉列表数据
+            </summary>
+            <param name="detail">子表中模型中的集合属性名称</param>
+            <param name="linkedValue">发起联动的源控件的值</param>
+            <param name="prop">数据源的列字段名</param>
+            <returns>Json序列化后的{id, text}集合</returns>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvDataController`2">
+            <summary>
+            通用的列表界面控制器基类,实体的主键是Int类型
+            </summary>
+            <typeparam name="TModel">模型的类型</typeparam>
+            <typeparam name="TEntity">数据实体的类型</typeparam>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvDataController`2.DataService">
+            <summary>
+            重写，以兼容ModelDataService[Tmoel, TEntity]
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataController`2.Edit(System.Int32)">
+            <summary>
+            重写以实现ID的默认值为0
+            </summary>
+            <param name="id">数据项ID</param>
+            <returns>编辑页视图</returns>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvDataExtensions">
+            <summary>
+            数据组件的静态扩展方法类
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataExtensions.AdvDataGrid(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            用默认的选项生成数据采集组件
+            </summary>
+            <param name="htmlHelper"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataExtensions.AdvDataEdit(System.Web.Mvc.HtmlHelper,System.Func{System.String,System.Object,System.Web.WebPages.HelperResult})">
+            <summary>
+            根据用户自定义的渲染方法生成数据采集组件
+            </summary>
+            <param name="htmlHelper"></param>
+            <param name="userRenderer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataExtensions.SelectUser(System.Web.Mvc.HtmlHelper,Jurassic.WebQuery.SelectUserFormData)">
+            <summary>
+            选择用户的控件
+            </summary>
+            <param name="helper"></param>
+            <param name="formData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataExtensions.LangTextInput(System.Web.Mvc.HtmlHelper,Jurassic.WebQuery.LangTextFormData)">
+            <summary>
+            多语言文本控件
+            </summary>
+            <param name="helper">HTML帮助对象</param>
+            <param name="formData">多语言控件需要的表单属性对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataExtensions.LangTextInput(System.Web.Mvc.HtmlHelper,System.String,System.String,Jurassic.WebQuery.CultureIconType)">
+            <summary>
+            多语言文本控件
+            </summary>
+            <param name="helper">HTML帮助对象</param>
+            <param name="name">多语言组件的表单域名称</param>
+            <param name="attrs">额外的属性集</param>
+            <param name="iconType">图标显示方式，文本或旗帜</param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvDataFilter`1">
+            <summary>
+            用于在AdvData表单显示前、保存前和保存后插入自定义逻辑
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvDataFilter`1.Controller">
+            <summary>
+            调用的控制器
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataFilter`1.BeforeSaving(`0)">
+            <summary>
+            保存前的操作
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataFilter`1.AfterSaved(`0)">
+            <summary>
+            成功保存后的操作
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvDataFilter`1.BeforeShowing(`0)">
+            <summary>
+            显示表单前的操作
+            </summary>
+            <param name="t"></param>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvQueryAttribute">
+            <summary>
+            高级查询的MVC筛选器，一般用于获取列表数据的GetData方法上
+            GetData方法只需返回未经筛选和分页的原始数据集
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryAttribute.#ctor">
+            <summary>
+            ctor
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvQueryFilterWrapper`1">
+            <summary>
+            高级查询的MVC筛选器的内部包装类
+            因为MVC筛选器用于打标记时，不支持泛型
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:Jurassic.WebQuery.AdvQueryFilterWrapper`1._keyFilter" -->
+        <member name="M:Jurassic.WebQuery.AdvQueryFilterWrapper`1.WrapData(System.Web.Mvc.JsonResult)">
+            <summary>
+            根据查询条件返回数据
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvQueryManager">
+            <summary>
+            高级查询管理类
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.GetUserQuerys(System.String)">
+            <summary>
+            返回当前用户保存过的当前模型的查询表达式列表
+            </summary>
+            <param name="modelName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.GetQueryItemById(System.Int32)">
+            <summary>
+            根据搜索项的ID查找对应的搜索项
+            </summary>
+            <param name="itemId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.GetQueryItemByName(System.String,System.String)">
+            <summary>
+            根据查询名称获取高级查询对象
+            </summary>
+            <param name="queryName">查询对象的名称</param>
+            <param name="modelName">要查询的实体类型全名</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.Save(Jurassic.WebQuery.AdvQueryItem)">
+            <summary>
+            保存查询对象，根据是否是新对象决定是插入还是改写
+            </summary>
+            <param name="item">查询对象</param>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.ClearQueryItem(Jurassic.WebQuery.AdvQueryItem)">
+            <summary>
+            去掉不必要的首尾空格
+            </summary>
+            <param name="item">高级查询对象</param>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.Query``1(System.Linq.IQueryable{``0},System.String,System.Int32)">
+            <summary>
+            根据指定的查询表达式和查询类型，查询指定集合
+            </summary>
+            <typeparam name="T">泛型集合的实体类型</typeparam>
+            <param name="q">待查询的IQueryable集合</param>
+            <param name="querys">前台传递的代表表达式树的json数据</param>
+            <param name="queryType">查询的种类，当为0时，表示只计算顶级的AND/OR， 当为1时表示要计算整个表达式树</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.GetPlainNodes(System.Collections.Generic.IEnumerable{Jurassic.WebQuery.AdvQueryNode})">
+            <summary>
+            只考虑顶级的AND/OR的表达式树
+            </summary>
+            <param name="nodes">完整查询表达式结点集合</param>
+            <returns>只考虑顶级AND/OR之后的结点集合</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.Query(System.Linq.IQueryable,System.String)">
+            <summary>
+            根据指定的查询对象名称，查询指定集合
+            </summary>
+            <param name="q">查询对象</param>
+            <param name="querys"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.Query(System.Linq.IQueryable,Jurassic.WebQuery.AdvQueryItem)">
+            <summary>
+            根据高级查询对象，查询指定集合
+            </summary>
+            <param name="q">待筛选的集合</param>
+            <param name="queryItem">高级查询对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.CalcFinalExpr(Jurassic.WebQuery.AdvQueryItem)">
+            <summary>
+            根据结点数据计算最终条件表达式的值
+            </summary>
+            <param name="item">高级查询对象</param>
+            <returns>二元组</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.AdvQueryManager.ProcessQueryNode(Jurassic.WebQuery.AdvQueryNode,Jurassic.WebQuery.AdvQueryItem,System.Object,System.String@,System.Collections.Generic.IList{System.Object}@)">
+            <summary>
+            处理一个查询定义节点。依次递归子节点循环。
+            </summary>
+            <param name="node">当前节点</param>
+            <param name="item">查询项集合</param>
+            <param name="odtObj"></param>
+            <param name="exp">查询表达式</param>
+            <param name="parameters">查询表达式参数</param>
+        </member>
+        <member name="T:Jurassic.WebQuery.Controllers.AdvQueryController">
+            <summary>
+            高级查询的控制器
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.AdvQueryController.SaveQueryItem(Jurassic.WebQuery.AdvQueryItem)">
+            <summary>
+            保存用户定义的查询表达式，并返回当页页的整个查询列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.AdvQueryController.DeleteQueryItem(System.Int32)">
+            <summary>
+            删除已有查询
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.AdvQueryController.GetUserQuerys(System.String)">
+            <summary>
+            获取当前用户的当前Model下的查询名称
+            </summary>
+            <param name="modelName">模型类型名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.QueryController.Index">
+            <summary>
+            主视图
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.QueryController.SQLView">
+            <summary>
+            显示结果和SQL语句的视图
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.QueryController.GetTableTree">
+            <summary>
+            获取表的树结构
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.QueryController.ToSQLString(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            将前台的字符串设置转化成SQL模型
+            </summary>
+            <param name="table"></param>
+            <param name="selfil"></param>
+            <param name="join"></param>
+            <param name="where"></param>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.QueryController.GetSQL(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            用用户设置的参数获取SQL语句
+            </summary>
+            <param name="selfil"></param>
+            <param name="join"></param>
+            <param name="where"></param>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Jurassic.WebQuery.Controllers.SelectDepUserController">
+            <summary>
+            选择部门用户 wangjiaxin 2016/9/28
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.SelectDepUserController.Index">
+            <summary>
+            选择用户的视图
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.SelectDepUserController.GetDepts">
+            <summary>
+            部门树
+            </summary>
+            <returns>部门树的json数据</returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.SelectDepUserController.GetAllDeptUsers(System.String)">
+            <summary>
+            获取所有部门用户列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Jurassic.WebQuery.Controllers.SelectDepUserController.GetDeptUsers(System.String)">
+            <summary>
+            指定部门下的用户列表
+            </summary>
+            <param name="deptIds">部门的ID，以,号分隔多个</param>
+            <returns>用户列表json数据</returns>
+        </member>
+        <member name="T:Jurassic.WebQuery.CultureIconType">
+            <summary>
+            多语言文本框语言类型显示方式
+            </summary>
+        </member>
+        <member name="F:Jurassic.WebQuery.CultureIconType.Text">
+            <summary>
+            文本
+            </summary>
+        </member>
+        <member name="F:Jurassic.WebQuery.CultureIconType.Flag">
+            <summary>
+            国（区）旗
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.IPagedDataController`1">
+            <summary>
+            定义用于使用AdvQuery查询组件的控制器，实现分页后的数据处理的接口
+            避免整个数据集的ToList
+            </summary>
+            <typeparam name="TModel">分页的数据实体类型</typeparam>
+        </member>
+        <member name="M:Jurassic.WebQuery.IPagedDataController`1.BeforeShowingPage(Jurassic.AppCenter.Pager{`0})">
+            <summary>
+            分页后的数据处理方法
+            </summary>
+            <param name="pagedData">分页后的分页数据对象</param>
+        </member>
+        <member name="T:Jurassic.WebQuery.IKeyFilter`1">
+            <summary>
+            用于高级查询中自定义查询条件的接口
+            </summary>
+            <typeparam name="T">用于查询的数据实体类型</typeparam>
+        </member>
+        <member name="M:Jurassic.WebQuery.IKeyFilter`1.GetKeyFilter(System.String)">
+            <summary>
+            返回自定义的查询条件表达式
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Jurassic.WebQuery.LangTextFormData.Id">
+            <summary>
+            多语言控件的ID，默认为master_+ Name的值
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.LangTextFormData.Name">
+            <summary>
+            多语言表单控件的Name属性，当前主语言不带后缀，其他语言的输入框带语言简称后缀，如 Name_en-us
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.LangTextFormData.Model">
+            <summary>
+            本控件绑定的Model对象，如果为空，则取页面本身的Model对象
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.LangTextFormData.StartValue">
+            <summary>
+            当前语言下的值
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.LangTextFormData.Attributes">
+            <summary>
+            除了id,value以外的属性
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.LangTextFormData.IconType">
+            <summary>
+            图标类型，国旗或文本， 默认文本
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.Models.AdvDataConfig">
+            <summary>
+            某个业务模型类在界面上显示或录入时的的显示配置项
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.Models.AdvDataConfig.#ctor">
+            <summary>
+            ctor：业务模型类在界面上显示或录入时的的显示配置项
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfig.ClassName">
+            <summary>
+            业务模型的类名
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfig.Items">
+            <summary>
+             该配置项的子项集合
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.Models.AdvDataConfigItem">
+            <summary>
+            业务模型类显示配置项的子项
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.Models.AdvDataConfigItem.#ctor">
+            <summary>
+            ctor: 业务模型类显示配置项的子项
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.OverWrite">
+            <summary>
+            是否覆盖CatalogExtAttribute的属性
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.PropertyName">
+            <summary>
+            属性名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.FormOrder">
+            <summary>
+            表单中的显示顺序
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.GridOrder">
+            <summary>
+            DataGrid中的显示顺序
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.Rows">
+            <summary>
+            该属性录入控件在表单中占几行的高度
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.Cols">
+            <summary>
+            该属性录入控件在表单中占几个单元格的宽度
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.ColumnWidth">
+            <summary>
+            在DataGrid中的列宽
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.Fixed">
+            <summary>
+            是否冻结该列
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.AdvDataConfigItem.SummaryType">
+            <summary>
+            该列的统计类型，sum/avg/count/max/min
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.WhereSettingModel.Connectors">
+            <summary>
+            和左边条件的连接
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.WhereSettingModel.RightTableENName">
+            <summary>
+            选择的表，用户自定义输入文本的时候为null
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.WhereSettingModel.RightAttributeENName">
+            <summary>
+            选择的字段，或者用户自定义输入。判断条件为RightTableENName是否为null
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.WhereSettingModel.Operator">
+            <summary>
+            和上一条Where语句的连接，第一条Where这个参数为null
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.ComboSettingModel.RightTableENName">
+            <summary>
+            选择的表，用户自定义输入文本的时候为null
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.Models.ComboSettingModel.RightAttributeENName">
+            <summary>
+            选择的字段，或者用户自定义输入。判断条件为RightTableENName是否为null
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvQuery">
+            <summary>
+            保存高级查询条件表达式的栏目信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQuery.Query">
+            <summary>
+            生成的高级查询栏目静态对象
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQuery.Id">
+            <summary>
+            栏目ID
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQuery.Name">
+            <summary>
+            栏目名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQuery.ModelName">
+            <summary>
+            表达式对应的模型名称
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvQueryNode">
+            <summary>
+            用户建立高级查询时，表达式树的单个结点信息
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryNode.Id">
+            <summary>
+            唯一标识，兼排序位
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryNode.ParentId">
+            <summary>
+            父级标识
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryNode.Expression">
+            <summary>
+            字段名或AND /OR
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryNode.ExpressionText">
+            <summary>
+            Expression的前台展示字符串
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryNode.Type">
+            <summary>
+            结点类型， AND/OR （Operator） 或 表达式(Expr)两种
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryNode.Operator">
+            <summary>
+            运算符
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryNode.Value">
+            <summary>
+            比较值
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryNode.ValueText">
+            <summary>
+            前台显示用，如果是枚举值，则和Value配对
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.AdvQueryItem">
+            <summary>
+            在高级查询页，返回用户保存过的查询列表中的每一列表项的实体
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryItem.Id">
+            <summary>
+            表达式ID
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryItem.Name">
+            <summary>
+            表达式名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryItem.ModelName">
+            <summary>
+            查询表达式对应的ODT模型名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.AdvQueryItem.Nodes">
+            <summary>
+            组成表达式树的结点列表
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.SummaryType">
+            <summary>
+            统计列类型
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.QueryExtensions">
+            <summary>
+            高级查询的扩展方法静态类
+            </summary>
+        </member>
+        <member name="M:Jurassic.WebQuery.QueryExtensions.AdvQuery``1(System.Web.Mvc.HtmlHelper)">
+            <summary>
+            创建一个查询类
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.QueryFormData">
+            <summary>
+            用于初始化高级查询的实体类
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.QueryFormData.ModelType">
+            <summary>
+            用于高级查询的数据实体类型
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.QueryViewType">
+            <summary>
+            筛选视图的呈现方式
+            </summary>
+        </member>
+        <member name="F:Jurassic.WebQuery.QueryViewType.Plain">
+            <summary>
+            平面列表表达式
+            </summary>
+        </member>
+        <member name="F:Jurassic.WebQuery.QueryViewType.Tree">
+            <summary>
+            树型条件表达式
+            </summary>
+        </member>
+        <member name="F:Jurassic.WebQuery.QueryViewType.PlainAndTree">
+            <summary>
+            列表和树形的结合
+            </summary>
+        </member>
+        <member name="T:Jurassic.WebQuery.SelectUserFormData">
+            <summary>
+            专用于用户选择界面的选项
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.SelectUserFormData.MultiSelect">
+            <summary>
+            允许多选
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.SelectUserFormData.Id">
+            <summary>
+            标识符，用于标识该控件
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.SelectUserFormData.Name">
+            <summary>
+            作为表单元素时的名称
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.SelectUserFormData.StartValue">
+            <summary>
+            起始值，如果是单选，则是单个用户ID，如果是多选，则是，号分隔的ID串
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.SelectUserFormData.Attributes">
+            <summary>
+            除了id,value以外的属性
+            </summary>
+        </member>
+        <member name="P:Jurassic.WebQuery.SelectUserFormData.ExtensionViews">
+            <summary>
+            扩展的分部视图，如果有多个，用逗号分隔
+            </summary>
+        </member>
+    </members>
+</doc>
